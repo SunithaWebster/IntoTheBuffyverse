@@ -8,7 +8,7 @@ const EventSchema = new mongoose.Schema({
   season_number: Number,
   characters_involved: Array,
   images_url: String,
-  in_lore_year: Number
+  in_lore_year: Number,
 });
 
 const Event = mongoose.model("Event", EventSchema);

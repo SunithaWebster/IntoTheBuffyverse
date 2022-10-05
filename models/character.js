@@ -6,12 +6,12 @@ const CharacterSchema = new mongoose.Schema({
   character_description: String,
   vital_status: String,
   species: String,
-  character_relationships_with: Object, 
+  character_relationships_with: Object,
   first_seen: String,
   last_seen: String,
   season_numbers: Array,
   images_url: String,
-  trivia: String
+  trivia: String,
 });
 
 const Character = mongoose.model("Character", CharacterSchema);
