@@ -1,0 +1,146 @@
+:root {
+    --scenePerspective: 1;
+    --scenePerspectiveOriginX: 50;
+    --scenePerspectiveOriginY: 30;
+    --itemZ: 2;
+    --cameraSpeed: 150; // Where 1 is the fastest
+    --cameraZ: 0;
+    --viewportHeight: 0;
+}
+
+/* Set 3D scene */
+
+.viewport {
+    height: calc(var(--viewportHeight) * 1px);
+
+    .scene3D-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
+        perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%) calc(var(--scenePerspectiveOriginY) * 1%);
+        will-change: perspective-origin;
+        transform: translate3d(0, 0, 0); //Allow Hardware-Accelerated CSS
+
+        .scene3D {
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            transform-style: preserve-3d;
+            transform: translateZ(calc(var(--cameraZ) * 1px));
+            will-change: transform;
+
+            >div {
+                position: absolute;
+                display: block;
+                width: 100%;
+                top: 40%;
+
+                @media only screen and (min-width: 600px) {
+                    width: 45%;
+                }
+
+                &:nth-child(2n) {
+                    left: 0;
+                }
+
+                &:nth-child(2n + 1) {
+                    right: 0;
+                }
+
+                @for $i from 0 through 25 {
+                    &:nth-child(#{$i}) {
+                        transform: translate3D(random(50) - 25 * 1%,
+                            random(100) - 50 * 1%,
+                            calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ----------
+        // Styling
+        // ---------- */
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:900");
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    // background-image: url("/PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIHZpZXdCb3g9JzAgMCA4MDAgODAwJz48cmVjdCBmaWxsPScjMDAwMDAwJyB3aWR0aD0nODAwJyBoZWlnaHQ9JzgwMCcvPjxnIGZpbGwtb3BhY2l0eT0nMSc+PGNpcmNsZSBmaWxsPScjMDAwMDAwJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNjAwJy8+PGNpcmNsZSBmaWxsPScjMTEwNzE4JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNTAwJy8+PGNpcmNsZSBmaWxsPScjMjIwZTMwJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNDAwJy8+PGNpcmNsZSBmaWxsPScjMzMxNDQ3JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMzAwJy8+PGNpcmNsZSBmaWxsPScjNDQxYjVmJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMjAwJy8+PGNpcmNsZSBmaWxsPScjNTUyMjc3JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMTAwJy8+PC9nPjwvc3ZnPg==");
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 93, 1) 35%, rgba(38, 34, 34, 1) 100%); // background-color: hsl(231, 15%, 18%);
+    color: hsl(231, 15%, 18%);
+    // background-image: url('data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIHZpZXdCb3g9JzAgMCA4MDAgODAwJz48cmVjdCBmaWxsPScjMDAwMDAwJyB3aWR0aD0nODAwJyBoZWlnaHQ9JzgwMCcvPjxnIGZpbGwtb3BhY2l0eT0nMSc+PGNpcmNsZSBmaWxsPScjMDAwMDAwJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNjAwJy8+PGNpcmNsZSBmaWxsPScjMjMwMDQ2JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNTAwJy8+PGNpcmNsZSBmaWxsPScjMmYwMDUyJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNDAwJy8+PGNpcmNsZSBmaWxsPScjM2IwNzVlJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMzAwJy8+PGNpcmNsZSBmaWxsPScjNDgxNTZhJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMjAwJy8+PGNpcmNsZSBmaWxsPScjNTUyMjc3JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMTAwJy8+PC9nPjwvc3ZnPg==');
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Playfair Display SC", serif;
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 100%);
+    margin: 0;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    text-align: center;
+
+    .logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 150px;
+    }
+}
+
+.link {
+    color: hsl(0, 0%, 100%);
+    margin: 0;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+}
+
+.scene3D {
+    >div {
+        // padding-top: 0;
+
+        h2.eventtitle{
+            margin: 0;
+            padding: 1rem;
+            font-family: "Playfair Display SC", serif;
+            font-size: 1.5rem;
+            text-align: center;
+            background-color: rgb(173, 21, 21);
+            color: white;
+        }
+
+        @for $i from 0 through 25 {
+            &:nth-child(#{$i}) {
+                // background-color: hsl(-30 + ($i * 30), 100%, 88%);
+                background-color: black;
+                color: white;
+                margin: 0;
+            }
+        }
+
+        div{
+            padding: 2rem;
+        }
+
+        p {
+            margin: 0;
+        }
+
+    }
+}
+
