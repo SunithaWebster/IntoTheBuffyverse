@@ -9,7 +9,7 @@ const CharacterSchema = new mongoose.Schema({
   character_relationships_with: Object, 
   first_seen: String,
   last_seen: String,
-  season_number: Number,
+  season_numbers: Array,
   images_url: String,
   trivia: String
 });

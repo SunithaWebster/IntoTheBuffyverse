@@ -8,8 +8,8 @@ const EpisodeSchema = new mongoose.Schema({
   season_number: Number,
   characters_involved: Array,
   images_url: String,
-  in_lore_date: Date, 
-  irl_release_date: Date
+  in_lore_year: Number, 
+  irl_release_date: String
 });
 
 const Episode = mongoose.model("Episode", EpisodeSchema);
