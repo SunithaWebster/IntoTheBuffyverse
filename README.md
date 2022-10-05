@@ -16,11 +16,21 @@ It uses:
 ## Card wall
 https://trello.com/b/i8kn5ccu/to-do
 
+## Entities
+
+```mermaid
+erDiagram
+         CHARACTER }|..|{ EPISODE : is_in
+          EPISODE }|..|{ EVENT : made_up_of
+          CHARACTER }|..|{ EVENT : is_in
+```
+
 ## Quickstart
 
 ### Install Node.js
 
 1. Install Node Version Manager (NVM)
+   Check if you have it first with `nvm --version`.  If not, use:
    ```
    brew install nvm
    ```
@@ -29,11 +39,10 @@ https://trello.com/b/i8kn5ccu/to-do
    If you already have nvm, you can update with the following cURL command:
    `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash` (see https://github.com/nvm-sh/nvm) - you may need to restart your terminal.
 2. Open a new terminal
-3. Install the latest version of [Node.js](https://nodejs.org/en/), currently `18.10.0`.
+3. Install the latest version of [Node.js](https://nodejs.org/en/), currently `18.10.0` (check if you have it first with `node --version`).
    ```
    nvm install node
    ```
-   (check version with `node --version`)
 4. Update npm with `npm install -g npm@latest` (You may need to prefix these commands with sudo, especially on Linux, or OS X if you installed Node using its default installer - see https://docs.npmjs.com/try-the-latest-stable-version-of-npm.)
 
 ### Set up your project
@@ -45,17 +54,17 @@ https://trello.com/b/i8kn5ccu/to-do
    ```
    npm install
    ```
-5. Install an ESLint plugin for your editor. For example: [linter-eslint](https://github.com/AtomLinter/linter-eslint) for Atom.
+5. Install an ESLint plugin for your editor. For example: [linter-eslint](https://github.com/AtomLinter/linter-eslint) for Atom.  You can use `npm i -g eslint` to install globally.
 6. Install or update MongoDB (see https://github.com/mongodb/homebrew-brew)
+   (You can check your version with the `mongod --version` command.)
    ```
    brew tap mongodb/brew
    brew install mongodb-community
    ```
    *Note:* If you see a message that says `If you need to have mongodb-community@5.0 first in your PATH, run:`, follow the instruction. Restart your terminal after this.
-   (You can check your version with the `mongod --version` command.)
 7. Start MongoDB
    ```
-   brew services start mongodb-community
+   brew services start mongodb-community@5.0
    ```
 
 ### Start
@@ -88,7 +97,7 @@ so that integration tests do not interact with the development server.
   ```bash
   npm run lint              # linter only
   npm run test:unit         # unit tests only
-  npm run test:integration  # integration tests only
+  npm run test:integration  # integration tests only (or `npx cypress run`)
   ```
 
 ## MongoDB Connection Errors?
