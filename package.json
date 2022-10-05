@@ -27,7 +27,9 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.6.4",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "sass": "^1.55.0",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
