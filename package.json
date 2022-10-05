@@ -31,6 +31,8 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
-    "babel-plugin-istanbul": "^6.1.1"
+    "babel-plugin-istanbul": "^6.1.1",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8"
   }
 }
