@@ -10,5 +10,6 @@ module.exports = defineConfig({
       // with any changed environment variables
       return config;
     },
+    specPattern: "cypress/integration/*spec.js"
   },
 });
