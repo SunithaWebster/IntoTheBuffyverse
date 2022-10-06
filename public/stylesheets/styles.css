@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Babylonica&family=Ruthie&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:900");
 :root {
   --scenePerspective: 1;
@@ -51,82 +54,82 @@
   right: 0;
 }
 .viewport .scene3D-container .scene3D > div:nth-child(0) {
-  transform: translate3D(6%, -12%, calc(var(--itemZ) * var(--cameraSpeed) * 0 * -1px));
+  transform: translate3D(5%, 25%, calc(var(--itemZ) * var(--cameraSpeed) * 0 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(1) {
-  transform: translate3D(-16%, -32%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px));
+  transform: translate3D(20%, 5%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(2) {
-  transform: translate3D(-16%, -31%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -1px));
+  transform: translate3D(-7%, 50%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(3) {
-  transform: translate3D(17%, 40%, calc(var(--itemZ) * var(--cameraSpeed) * 3 * -1px));
+  transform: translate3D(19%, -18%, calc(var(--itemZ) * var(--cameraSpeed) * 3 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(4) {
-  transform: translate3D(-18%, 12%, calc(var(--itemZ) * var(--cameraSpeed) * 4 * -1px));
+  transform: translate3D(9%, 40%, calc(var(--itemZ) * var(--cameraSpeed) * 4 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(5) {
-  transform: translate3D(-4%, -3%, calc(var(--itemZ) * var(--cameraSpeed) * 5 * -1px));
+  transform: translate3D(10%, -42%, calc(var(--itemZ) * var(--cameraSpeed) * 5 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(6) {
-  transform: translate3D(4%, 50%, calc(var(--itemZ) * var(--cameraSpeed) * 6 * -1px));
+  transform: translate3D(15%, 10%, calc(var(--itemZ) * var(--cameraSpeed) * 6 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(7) {
-  transform: translate3D(-1%, 26%, calc(var(--itemZ) * var(--cameraSpeed) * 7 * -1px));
+  transform: translate3D(15%, -24%, calc(var(--itemZ) * var(--cameraSpeed) * 7 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(8) {
-  transform: translate3D(-13%, 2%, calc(var(--itemZ) * var(--cameraSpeed) * 8 * -1px));
+  transform: translate3D(-20%, -20%, calc(var(--itemZ) * var(--cameraSpeed) * 8 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(9) {
-  transform: translate3D(2%, 19%, calc(var(--itemZ) * var(--cameraSpeed) * 9 * -1px));
+  transform: translate3D(-1%, -30%, calc(var(--itemZ) * var(--cameraSpeed) * 9 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(10) {
-  transform: translate3D(16%, -33%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -1px));
+  transform: translate3D(-16%, 8%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(11) {
-  transform: translate3D(12%, 8%, calc(var(--itemZ) * var(--cameraSpeed) * 11 * -1px));
+  transform: translate3D(-10%, 13%, calc(var(--itemZ) * var(--cameraSpeed) * 11 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(12) {
-  transform: translate3D(0%, 25%, calc(var(--itemZ) * var(--cameraSpeed) * 12 * -1px));
+  transform: translate3D(-1%, -18%, calc(var(--itemZ) * var(--cameraSpeed) * 12 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(13) {
-  transform: translate3D(9%, -4%, calc(var(--itemZ) * var(--cameraSpeed) * 13 * -1px));
+  transform: translate3D(-5%, -45%, calc(var(--itemZ) * var(--cameraSpeed) * 13 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(14) {
-  transform: translate3D(-20%, -31%, calc(var(--itemZ) * var(--cameraSpeed) * 14 * -1px));
+  transform: translate3D(-5%, -34%, calc(var(--itemZ) * var(--cameraSpeed) * 14 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(15) {
-  transform: translate3D(25%, 44%, calc(var(--itemZ) * var(--cameraSpeed) * 15 * -1px));
+  transform: translate3D(14%, -1%, calc(var(--itemZ) * var(--cameraSpeed) * 15 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(16) {
-  transform: translate3D(18%, -21%, calc(var(--itemZ) * var(--cameraSpeed) * 16 * -1px));
+  transform: translate3D(23%, 34%, calc(var(--itemZ) * var(--cameraSpeed) * 16 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(17) {
-  transform: translate3D(-5%, 46%, calc(var(--itemZ) * var(--cameraSpeed) * 17 * -1px));
+  transform: translate3D(7%, -13%, calc(var(--itemZ) * var(--cameraSpeed) * 17 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(18) {
-  transform: translate3D(-24%, 1%, calc(var(--itemZ) * var(--cameraSpeed) * 18 * -1px));
+  transform: translate3D(11%, -3%, calc(var(--itemZ) * var(--cameraSpeed) * 18 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(19) {
-  transform: translate3D(24%, 38%, calc(var(--itemZ) * var(--cameraSpeed) * 19 * -1px));
+  transform: translate3D(17%, 38%, calc(var(--itemZ) * var(--cameraSpeed) * 19 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(20) {
-  transform: translate3D(1%, 30%, calc(var(--itemZ) * var(--cameraSpeed) * 20 * -1px));
+  transform: translate3D(-15%, 42%, calc(var(--itemZ) * var(--cameraSpeed) * 20 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(21) {
-  transform: translate3D(-13%, 20%, calc(var(--itemZ) * var(--cameraSpeed) * 21 * -1px));
+  transform: translate3D(14%, -3%, calc(var(--itemZ) * var(--cameraSpeed) * 21 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(22) {
-  transform: translate3D(-3%, 47%, calc(var(--itemZ) * var(--cameraSpeed) * 22 * -1px));
+  transform: translate3D(12%, -27%, calc(var(--itemZ) * var(--cameraSpeed) * 22 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(23) {
-  transform: translate3D(25%, -45%, calc(var(--itemZ) * var(--cameraSpeed) * 23 * -1px));
+  transform: translate3D(19%, 41%, calc(var(--itemZ) * var(--cameraSpeed) * 23 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(24) {
-  transform: translate3D(-19%, 9%, calc(var(--itemZ) * var(--cameraSpeed) * 24 * -1px));
+  transform: translate3D(1%, 4%, calc(var(--itemZ) * var(--cameraSpeed) * 24 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(25) {
-  transform: translate3D(23%, 47%, calc(var(--itemZ) * var(--cameraSpeed) * 25 * -1px));
+  transform: translate3D(-14%, -40%, calc(var(--itemZ) * var(--cameraSpeed) * 25 * -1px));
 }
 
 /* ----------
@@ -146,6 +149,37 @@ body {
   margin: 0;
 }
 
+body {
+  background: linear-gradient(0deg, #540000, #280000, #000823, #540000);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 h1 {
   font-family: "Playfair Display SC", serif;
   font-size: 1.5rem;
@@ -171,148 +205,157 @@ h1 .logo {
   z-index: 1;
 }
 
-.scene3D > div h2.eventtitle {
-  margin: 0;
-  padding: 1rem;
-  font-family: "Playfair Display SC", serif;
-  font-size: 1.5rem;
+.scene3D > div .card {
+  width: 800px;
+  height: 400px;
+  background: transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+}
+.scene3D > div .card_left {
+  width: 40%;
+  height: 400px;
+  float: left;
+  overflow: hidden;
+  background: transparent;
+}
+.scene3D > div .card_left img {
+  width: auto;
+  height: 400px;
+  border-radius: 10px 0 0 10px;
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+.scene3D > div .card_right {
+  width: 60%;
+  float: left;
+  background: #000000;
+  height: 400px;
+  border-radius: 0 10px 10px 0;
+  -webkit-border-radius: 0 10px 10px 0;
+  -moz-border-radius: 0 10px 10px 0;
+}
+.scene3D > div .card_right h2 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   text-align: center;
-  background-color: rgb(173, 21, 21);
-  color: white;
+  font-size: 36px;
+  margin: 50px 10px 40px 0;
+  padding: 0 0 0 20px;
+  letter-spacing: 1px;
 }
-.scene3D > div:nth-child(0) {
-  background-color: black;
+.scene3D > div .card_right__details ul {
+  list-style-type: none;
+  padding: 0 0 0 40px;
+  margin: 10px 0 0 0;
+}
+.scene3D > div .card_right__details ul li {
+  display: inline;
+  color: #e3e3e3;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0 40px 0 0;
+}
+.scene3D > div .card_right__rating__stars {
+  position: relative;
+  right: 160px;
+  margin: 10px 0 10px 0;
+  /***** CSS Magic to Highlight Stars on Hover *****/
+  /* hover previous stars in list */
+}
+.scene3D > div .card_right__rating__stars fieldset,
+.scene3D > div .card_right__rating__stars label {
+  margin: 0;
+  padding: 0;
+}
+.scene3D > div .card_right__rating__stars .rating {
+  border: none;
+}
+.scene3D > div .card_right__rating__stars .rating > input {
+  display: none;
+}
+.scene3D > div .card_right__rating__stars .rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  display: inline-block;
+  content: "\f005";
+  font-family: FontAwesome;
+}
+.scene3D > div .card_right__rating__stars .rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+.scene3D > div .card_right__rating__stars .rating > label {
+  color: #ddd;
+  float: right;
+}
+.scene3D > div .card_right__rating__stars .rating > input:checked ~ label,
+.scene3D > div .card_right__rating__stars .rating:not(:checked) > label:hover,
+.scene3D > div .card_right__rating__stars .rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+.scene3D > div .card_right__rating__stars .rating > input:checked + label:hover,
+.scene3D > div .card_right__rating__stars .rating > input:checked ~ label:hover,
+.scene3D > div .card_right__rating__stars .rating > label:hover ~ input:checked ~ label,
+.scene3D > div .card_right__rating__stars .rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
+}
+.scene3D > div .card_right__review p {
   color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  padding: 0 40px 0 40px;
+  letter-spacing: 1px;
+  margin: 10px 0 10px 0;
+  line-height: 20px;
+}
+.scene3D > div .card_right__review a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  padding: 0 0 0 40px;
+  color: #ff2f00;
   margin: 0;
 }
-.scene3D > div:nth-child(1) {
-  background-color: black;
-  color: white;
-  margin: 0;
+.scene3D > div .card_right__button {
+  padding: 0 0 0 40px;
+  margin: 30px 0 0 0;
 }
-.scene3D > div:nth-child(2) {
-  background-color: black;
-  color: white;
-  margin: 0;
+.scene3D > div .card_right__button a {
+  color: #ffda00;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #ffda00;
+  padding: 10px 10px 10px 40px;
+  font-size: 12px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/COMdoWZ.png);
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 7% 50%;
+  border-radius: 5px;
+  transition-property: all;
+  transition-duration: 0.5s;
 }
-.scene3D > div:nth-child(3) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(4) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(5) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(6) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(7) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(8) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(9) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(10) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(11) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(12) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(13) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(14) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(15) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(16) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(17) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(18) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(19) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(20) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(21) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(22) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(23) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(24) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div:nth-child(25) {
-  background-color: black;
-  color: white;
-  margin: 0;
-}
-.scene3D > div div {
-  padding: 2rem;
-}
-.scene3D > div p {
-  margin: 0;
+.scene3D > div .card_right__button a:hover {
+  color: #000000;
+  background-color: #ffda00;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/rFQ5dHA.png);
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.5s;
 }/*# sourceMappingURL=styles.css.map */
