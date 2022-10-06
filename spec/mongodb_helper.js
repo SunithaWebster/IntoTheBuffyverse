@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 
 beforeAll(function (done) {
-  mongoose.connect("mongodb://0.0.0.0/acebook_test", {
+  // mongoose.connect("mongodb://0.0.0.0/into_the_buffyverse_test", {
+  mongoose.connect("mongodb+srv://boristsang:boristsang@cluster0.fyynu9m.mongodb.net/into_the_buffyverse_test", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

@@ -103,6 +103,18 @@ so that integration tests do not interact with the development server.
   npm run test:integration  # integration tests only (or `npx cypress run`)
   ```
 
+## Setting Up the Database
+
+1) Create a cluster - https://www.mongodb.com/cloud/atlas/lp/general/try.
+2) Sign Up and verify email address.
+3) Setup credentials (username and password).
+4) Select Cloud Environment option and input IP address (click button).
+5) Click "Connect" on page and choose your mongoDB interface of choice.
+6) Copy Connection String to use to connect!
+7) (For MongoDB Compass users) If you get "bad auth" error, manually enter your password in the Advanced Connections Option under the Authentication tab and it should connect.
+8) Create "into_the_buffyverse" and "into_the_buffyverse_test" databases, containing collections "characters", "episodes" and "events".
+9) You may now run and test (see above for npm terminal commands)!
+
 ## MongoDB Connection Errors?
 
 You may experience MongoDB connection errors when running the tests or trying to use the application. Here are some tips that might help resolve such issues.
