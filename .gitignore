@@ -1,2 +1,4 @@
 ### Files to ignore when staging:
 **/.DS_Store
+cypress/screenshots/
+cypress/videos/
