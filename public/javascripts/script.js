@@ -80,34 +80,56 @@ function setSceneHeight() {
     document.documentElement.style.setProperty("--viewportHeight", height);
 }
 
-function createEpisodeItem(episode) {
+function createEpisodeItem(episode, css) {
     return `
-            
+        <div class='${css}'>
+            <div class='card_left'>
+                <img src='https://m.media-amazon.com/images/M/MV5BY2MwOGIyZGYtNzgxZC00N2Q5LTllYjItM2U4MTkwMDBjYzUyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg'>
+            </div>
+            <div class='card_right'>
+                <h2>${episode.title}</h2>
+                <div class='card_right__details'>
+                    <ul>
+                        <li><b>Episode:</b> ${episode.episode_number}</li>
+                        <li><b>Season:</b> ${episode.season}</li>
+                    </ul>
+                    <ul>
+                        <li><b>Air date:</b> ${episode.air_date}</li>
+                    </ul>
+                    <div class='card_right__review'>
+                    <p><b>Sinopsis:</b> ${episode.plot}</p>
+                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
 
-            <div class='card'>
-  <div class='card_left'>
-    <img src='https://m.media-amazon.com/images/M/MV5BY2MwOGIyZGYtNzgxZC00N2Q5LTllYjItM2U4MTkwMDBjYzUyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg'>
-  </div>
-  <div class='card_right'>
-    <h2>${episode.title}</h2>
-    <div class='card_right__details'>
-      <ul>
-        <li><b>Episode:</b> ${episode.episode_number}</li>
-        <li><b>Season:</b> ${episode.season}</li>
-      </ul>
-      <ul>
-        <li><b>Air date:</b> ${episode.air_date}</li>
-      </ul>
-      <div class='card_right__review'>
-      <p><b>Sinopsis:</b> ${episode.plot}</p>
-        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-        `;
+function createEpisodeItem2(episode, css) {
+    return `
+        <div class='${css}'>
+            <div class='card_right'>
+                <h2>${episode.title}</h2>
+                <div class='card_right__details'>
+                    <ul>
+                        <li><b>Episode:</b> ${episode.episode_number}</li>
+                        <li><b>Season:</b> ${episode.season}</li>
+                    </ul>
+                    <ul>
+                        <li><b>Air date:</b> ${episode.air_date}</li>
+                    </ul>
+                    <div class='card_right__review'>
+                    <p><b>Sinopsis:</b> ${episode.plot}</p>
+                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class='card_left'>
+                <img src='https://m.media-amazon.com/images/M/MV5BY2MwOGIyZGYtNzgxZC00N2Q5LTllYjItM2U4MTkwMDBjYzUyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg'>
+            </div>
+        </div>
+    `;
 }
 
 {/* <h2 class = "eventtitle">${episode.title}</h2>
@@ -177,7 +199,15 @@ function appendEpisodes(episodes) {
     let episodesNodes = [];
 
     for (episode of episodes) {
-        episodesNodes.push(createEpisodeItem(episode));
+        let index = episodes.indexOf(episode);
+        if (index % 2 == 0) { // if even as it is
+            let css = "card";
+            episodesNodes.push(createEpisodeItem2(episode, css));
+        } else {
+            let css = "card_inverted";
+            episodesNodes.push(createEpisodeItem(episode, css));
+        }
+        
     }
 
     episodesEl.innerHTML = episodesNodes.join(" ");
