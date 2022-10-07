@@ -79,18 +79,13 @@
 }
 
 html{
-    // background: linear-gradient(0deg, #540000, #280000, #000823, #540000);
-    // background-size: 400% 400%;
-    // animation: gradient 15s ease infinite;
-    // height: 100vh;
+    overscroll-behavior: none;
 }
 
 body {
-    // background-image: url("/PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIHZpZXdCb3g9JzAgMCA4MDAgODAwJz48cmVjdCBmaWxsPScjMDAwMDAwJyB3aWR0aD0nODAwJyBoZWlnaHQ9JzgwMCcvPjxnIGZpbGwtb3BhY2l0eT0nMSc+PGNpcmNsZSBmaWxsPScjMDAwMDAwJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNjAwJy8+PGNpcmNsZSBmaWxsPScjMTEwNzE4JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNTAwJy8+PGNpcmNsZSBmaWxsPScjMjIwZTMwJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNDAwJy8+PGNpcmNsZSBmaWxsPScjMzMxNDQ3JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMzAwJy8+PGNpcmNsZSBmaWxsPScjNDQxYjVmJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMjAwJy8+PGNpcmNsZSBmaWxsPScjNTUyMjc3JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMTAwJy8+PC9nPjwvc3ZnPg==");
     background: rgb(2, 0, 36);
     background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 93, 1) 35%, rgba(38, 34, 34, 1) 100%); // background-color: hsl(231, 15%, 18%);
     color: hsl(231, 15%, 18%);
-    // background-image: url('data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIHZpZXdCb3g9JzAgMCA4MDAgODAwJz48cmVjdCBmaWxsPScjMDAwMDAwJyB3aWR0aD0nODAwJyBoZWlnaHQ9JzgwMCcvPjxnIGZpbGwtb3BhY2l0eT0nMSc+PGNpcmNsZSBmaWxsPScjMDAwMDAwJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNjAwJy8+PGNpcmNsZSBmaWxsPScjMjMwMDQ2JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNTAwJy8+PGNpcmNsZSBmaWxsPScjMmYwMDUyJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nNDAwJy8+PGNpcmNsZSBmaWxsPScjM2IwNzVlJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMzAwJy8+PGNpcmNsZSBmaWxsPScjNDgxNTZhJyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMjAwJy8+PGNpcmNsZSBmaWxsPScjNTUyMjc3JyAgY3g9JzQwMCcgY3k9JzQwMCcgcj0nMTAwJy8+PC9nPjwvc3ZnPg==');
     padding: 0;
     margin: 0;
 }
@@ -564,6 +559,18 @@ h1 {
         }
 
     }
+}
+
+html {
+    // overflow: hidden;
+    // height: 100%;
+    overscroll-behavior: none;
+}
+
+body {
+    // overflow: auto;
+    // height: 100%;
+
 }
 
 
