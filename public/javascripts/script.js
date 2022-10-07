@@ -84,7 +84,7 @@ function createEpisodeItem(episode, css) {
     return `
         <div class='${css}'>
             <div class='card_left'>
-                <img src='https://m.media-amazon.com/images/M/MV5BY2MwOGIyZGYtNzgxZC00N2Q5LTllYjItM2U4MTkwMDBjYzUyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg'>
+                <img src='https://images.justwatch.com/poster/257479052/s332/season-3'>
             </div>
             <div class='card_right'>
                 <h2>${episode.title}</h2>
