@@ -20,7 +20,7 @@ app.set("port", port);
  * Connect to MongoDB
  **/
 
-var mongoDbUrl = process.env.MONGODB_URL || "mongodb+srv://SWebScooby:OIbzpV5mDc3au8Sf@buffyverse.go2fcrs.mongodb.net/into_the_buffyverse_test";
+var mongoDbUrl = process.env.MONGODB_URL || "mongodb+srv://SWebScooby:OIbzpV5mDc3au8Sf@buffyverse.go2fcrs.mongodb.net/into_the_buffyverse";
 mongoose.connect(mongoDbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

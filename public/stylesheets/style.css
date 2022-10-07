@@ -142,12 +142,16 @@
 }
 
 html {
+  height: 100%;
+  /* overflow: hidden; */
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
-  scrollbar-width: none;
+      background-color: #000000;
 }
 
 body {
+  /* height: 100%; */
+  /* overflow: auto; */
   background: rgb(2, 0, 36);
   background: linear-gradient(0deg, rgb(2, 0, 36) 0%, rgb(50, 50, 93) 35%, rgb(38, 34, 34) 100%);
   color: hsl(231deg, 15%, 18%);
