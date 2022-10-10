@@ -147,7 +147,12 @@
 html {
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
+  -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
