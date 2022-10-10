@@ -39,12 +39,14 @@
             transform-style: preserve-3d;
             transform: translateZ(calc(var(--cameraZ) * 1px));
             will-change: transform;
+            scroll-snap-type: mandatory;
 
             >div {
                 position: absolute;
                 display: block;
                 width: 100%;
                 top: 40%;
+                scroll-snap-align: center;
 
                 @media only screen and (min-width: 600px) {
                     width: 45%;
@@ -604,12 +606,15 @@ body {
     font-size: 30px;
     color: #DF644A;
     white-space: nowrap;
+    // background-color: #00000046;
+    text-shadow: #00000046 2px 2px;
 }
 
 .logo p {
     font-family: 'Lobster', cursive;
     color: #DF644A;
     font-size: 32.5px;
+    text-shadow: 2px 2px #ff0000;
 }
 
 .dropdown {
@@ -619,6 +624,7 @@ body {
     right: 0;
     margin-right: 15px;
     z-index: 1;
+    background-color: #00000046;
 }
 
 .dropdown p {
@@ -633,4 +639,8 @@ body {
 #search {
     background: url("images/searchicon.png") no-repeat left;
     color: #ffffff
+}
+
+a:link {
+    text-decoration: none;
 }
