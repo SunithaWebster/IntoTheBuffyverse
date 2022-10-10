@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Ruthie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Inspiration');
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
@@ -584,5 +587,50 @@ body {
 
 }
 
+.navbar {
+    position: fixed;
+    margin-top: -9px;
+    z-index: 2;
+}
 
+.navbar h3 {
+    position: fixed;
+    top: 0;
+    margin-top: 30px;
+    margin-left: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Inspiration", cursive;
+    font-size: 30px;
+    color: #DF644A;
+    white-space: nowrap;
+}
 
+.logo p {
+    font-family: 'Lobster', cursive;
+    color: #DF644A;
+    font-size: 32.5px;
+}
+
+.dropdown {
+    position: fixed;
+    margin-top: 70px;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    z-index: 1;
+}
+
+.dropdown p {
+    font-family: "Merriweather", serif;
+    color: #DF644A;  
+}
+
+#menu:hover {
+    cursor: pointer;
+}
+
+#search {
+    background: url("images/searchicon.png") no-repeat left;
+    color: #ffffff
+}

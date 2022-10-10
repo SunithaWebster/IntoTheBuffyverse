@@ -1,5 +1,14 @@
 let episodes = [];
 
+function toggleDisplay(tabId) {
+    var tab = document.getElementById(tabId);
+    if (tab.style.display == "none") {
+        tab.style.display = "";
+    } else if (tab.style.display == "") {
+        tab.style.display = "none";
+    }
+};
+
 const perspectiveOrigin = {
     x: parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue(
@@ -126,7 +135,7 @@ function createEpisodeItem2(episode, css) {
                 </div>
             </div>
             <div class='card_left'>
-                <img src='https://m.media-amazon.com/images/M/MV5BY2MwOGIyZGYtNzgxZC00N2Q5LTllYjItM2U4MTkwMDBjYzUyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg'>
+                <img src='https://m.media-amazon.com/images/M/MV5BY2MwOGIyZGYtNzgxZC00N2Q5LTllYjItM2U4MTkwMDBjYzUyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg'></a>
             </div>
         </div>
     `;
