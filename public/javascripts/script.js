@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
             episodes = response.data;
             appendEpisodes(episodes);
             window.addEventListener("scroll", moveCamera);
+            // var scene = document.getElementById("scene3D");
+            // scene.addEventListener("scroll", moveCamera);
             window.addEventListener("mousemove", moveCameraAngle);
             setSceneHeight();
         })
