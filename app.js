@@ -69,7 +69,7 @@ const sessionChecker = (req, res, next) => {
 app.use("/", zoomPageRouter);
 
 app.get("/api/episodes", (req, res) => {
-  Episodes
+  Episode
     .find()
     .then(allComposers => res.json(allComposers))
 });

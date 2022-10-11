@@ -10,6 +10,7 @@ const EpisodeSchema = new mongoose.Schema({
   images_url: String,
   in_lore_year: Number,
   irl_release_date: String,
+  imgurl: Array
 });
 
 const Episode = mongoose.model("Episode", EpisodeSchema);
