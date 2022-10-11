@@ -4,6 +4,19 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="javascripts/script.js"></script>
+    {{!-- <style>
+        body {
+            overflow-y: hidden;
+        }
+        .scene3D {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+        .scene3D > div {
+            scroll-snap-align: start;
+        }
+    </style> --}}
 </head>
 
 <body>
@@ -39,7 +52,7 @@
     </h1>
     <div class="viewport">
     <div class="scene3D-container">
-        <div class="scene3D"></div>
+        <div id="scene3D" class="scene3D"></div>
     </div>
     </div>
     <script>document.getElementById("menu").click()</script>

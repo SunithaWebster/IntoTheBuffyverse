@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                overflow-y: scroll;
+                scroll-snap-type: y mandatory;
+            }
+            .container > div {
+                scroll-snap-align: start;
+            }
+            .element1 {
+                background-color: aqua;
+            }
+            .element2 {
+                background-color: rgb(0, 255, 76);
+            }
+            .element3 {
+                background-color: rgb(246, 255, 0);
+            }
+            .element4 {
+                background-color: rgb(255, 179, 0);
+            }
+            .element5 {
+                background-color: rgb(255, 0, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="element1"><h1>Yar 1</h1></div>
+            <div class="element2"><h1>Yar 2</h1></div>
+            <div class="element3"><h1>Yar 3</h1></div>
+            <div class="element4"><h1>Yar 4</h1></div>
+            <div class="element5"><h1>Yar 5</h1></div>
+        </div>
+    </body>
+</html>
