@@ -9,6 +9,10 @@ function toggleDisplay(tabId) {
     }
 };
 
+// function scrollToNextCard() {
+//     window.scrollTo(0, 1000);
+// }
+
 const perspectiveOrigin = {
     x: parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue(

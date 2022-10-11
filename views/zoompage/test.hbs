@@ -7,6 +7,7 @@
                 scroll-snap-type: y mandatory;
             }
             .container > div {
+                height: 100vh;
                 scroll-snap-align: start;
             }
             .element1 {
@@ -35,4 +36,37 @@
             <div class="element5"><h1>Yar 5</h1></div>
         </div>
     </body>
+    <script>
+        let timer = null;
+        let keydown = false;
+        function scrollToMiddle() {
+            window.scrollTo({
+                top: 500,
+                behavior: 'smooth'
+            });
+        }
+        function executeScroll() {
+            if (window.scrollY < 50) {
+                if ()
+                if (timer !== null && keydown !== true) {
+                    clearTimeout(timer);        
+                }
+                timer = setTimeout(scrollToMiddle, 150);
+            } else {
+                if (timer !== null && keydown !== true) {
+                    clearTimeout(timer);        
+                }
+                timer = setTimeout(scrollToMiddle, 150);
+            }
+        }
+        function keyDown() {
+            keydown = true;
+        }
+        function keyUp() {
+            keydown = false;
+        }
+        document.addEventListener("scroll", executeScroll; keyDown;);
+        // document.addEventListener("mousedown", keyDown);
+        document.addEventListener("mouseup", keyUp);
+    </script>
 </html>
