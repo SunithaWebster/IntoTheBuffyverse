@@ -89,24 +89,43 @@ function setSceneHeight() {
     document.documentElement.style.setProperty("--viewportHeight", height);
 }
 
+const dateformat = (date) => {
+    let newdate = new Date(date)
+    let datetostring = `${newdate.getDate()}/${newdate.getMonth()}/${newdate.getFullYear()}`
+    return datetostring
+}
+
+const dateyear = (date) => {
+    let newdate = new Date(date)
+    let datetostring = `${newdate.getFullYear()}`
+    return datetostring
+}
+
 function createEpisodeItem(episode, css) {
     return `
         <div class='${css}'>
             <div class='card_left'>
-                <img src='${episode.imgurl}'>
+                <img src='${episode.imgurl[0]}'>
             </div>
             <div class='card_right'>
                 <h2>${episode.title}</h2>
                 <div class='card_right__details'>
                     <ul>
-                        <li><b>Episode:</b> ${episode.episode_number}</li>
                         <li><b>Season:</b> ${episode.season}</li>
+                        <li><b>Episode:</b> ${episode.episode_number}</li>
                     </ul>
                     <ul>
-                        <li><b>Air date:</b> ${episode.air_date}</li>
+                        <li><b>Air date:</b> ${dateformat(episode.air_date)}</li>
+                        <li><b>Lore year:</b> ${dateyear(episode.lore_year)}</li>
+                    </ul>
+                    <ul>
+                        <li><b>Director:</b> ${episode.director}</li>
+                    </ul>
+                    <ul>
+                        <li><b>Writers:</b> ${episode.writers}</li>
                     </ul>
                     <div class='card_right__review'>
-                    <p><b>Sinopsis:</b> ${episode.plot}</p>
+                    <p><b>Synopsis:</b> ${episode.plot}</p>
                         <a href='${episode.imdb_url}' target='_blank'>Read more</a>
                     </div>
                 </div>
@@ -122,8 +141,8 @@ function createEpisodeItem2(episode, css) {
                 <h2>${episode.title}</h2>
                 <div class='card_right__details'>
                     <ul>
-                        <li><b>Episode:</b> ${episode.episode_number}</li>
                         <li><b>Season:</b> ${episode.season}</li>
+                        <li><b>Episode:</b> ${episode.episode_number}</li>
                     </ul>
                     <ul>
                         <li><b>Air date:</b> ${episode.air_date}</li>
