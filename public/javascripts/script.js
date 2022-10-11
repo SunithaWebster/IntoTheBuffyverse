@@ -25,7 +25,7 @@ const perspectiveOrigin = {
 
 document.addEventListener("DOMContentLoaded", function () {
   axios
-    .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode/season/1")
+    .get("http://localhost:3000/api/episodes")
     .then(function (response) {
       episodes = response.data;
       appendEpisodes(episodes);
@@ -93,7 +93,7 @@ function createEpisodeItem(episode, css) {
   return `
         <div class='${css}'>
             <div class='card_left'>
-                <img src='https://images.justwatch.com/poster/257479052/s332/season-3'>
+                <img src='${episode.imgurl}'>
             </div>
             <div class='card_right'>
                 <h2>${episode.title}</h2>
@@ -135,7 +135,7 @@ function createEpisodeItem2(episode, css) {
                 </div>
             </div>
             <div class='card_left'>
-                <img src='https://m.media-amazon.com/images/M/MV5BY2MwOGIyZGYtNzgxZC00N2Q5LTllYjItM2U4MTkwMDBjYzUyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg'></a>
+                <img src='${episode.imgurl}'>
             </div>
         </div>
     `;
