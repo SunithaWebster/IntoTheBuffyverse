@@ -1,8 +1,5 @@
 let episodes = [];
-
-function reverseEpisodesOrder() {
-    episodes.reverse();
-}
+let episodesReversed = [];
 
 function toggleDisplay(tabId) {
     var tab = document.getElementById(tabId);
@@ -14,7 +11,17 @@ function toggleDisplay(tabId) {
 };
 
 function updateCardTitleBar() {
-    var cardId = scrollY / 300;
+    var cardId = Math.round(scrollY / 300);
+    var episode = episodes[cardId - 1];
+    var title = document.getElementById("title");
+    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title}`;
+}
+
+function centreCard() {
+    var cardId = Math.round(scrollY / 300);
+    var episode = episodes[cardId - 1];
+    var currentCard = document.getElementById(cardId.toString);
+    currentCard.style.transform = "translateX(-50%)";
 }
 
 function scrollToNextCard() {
@@ -83,11 +90,12 @@ const perspectiveOrigin = {
 
 document.addEventListener("DOMContentLoaded", function () {
     axios
-        .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode/season/1")
+        // .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode/season/1")
+        .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode")
         .then(function (response) {
             episodes = response.data;
-            reverseEpisodesOrder();
-            appendEpisodes(episodes);
+            episodesReversed = episodes.reverse();
+            appendEpisodes(episodesReversed);
             window.addEventListener("scroll", moveCamera);
             // var scene = document.getElementById("scene3D");
             // scene.addEventListener("scroll", moveCamera);
@@ -272,14 +280,14 @@ function appendEpisodes(episodes) {
     let episodesNodes = [];
 
     for (episode of episodes) {
-        let index = episodes.indexOf(episode);
+        let index = episodesReversed.length - episodesReversed.indexOf(episode);
         if (index % 2 == 0) { // if even as it is
             let css = "card";
-            let id = index + 1;
+            let id = index;
             episodesNodes.push(createEpisodeItem2(episode, id, css));
         } else {
             let css = "card_inverted";
-            let id = index + 1;
+            let id = index;
             episodesNodes.push(createEpisodeItem(episode, id, css));
         }
         

@@ -4,7 +4,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="javascripts/script.js"></script>
-    <script src="javascripts/scrollsnap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.fog.min.js"></script>
+    {{!-- <script src="vanta.fog.min.js"></script> --}}
     {{!-- <style>
         body {
             overflow-y: hidden;
@@ -25,11 +27,12 @@
     {{!-- <audio autoplay id="music">
         <source src="/sounds/It-Doesnt-Matter.mp3">
     </audio> --}}
+    <div id="container" class="container">
     <div class="navbar">
         <div class="logo">
             <p>&ensp;Into the Buffyverse</p>
         </div>
-        <h3>Episode View: S1, E1: Welcome to the Hellmouth</h3>
+        <h3 id="title"></h3>
         <img id="menu" style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;" src="images/menuicon2.png" onclick="toggleDisplay('dropdown');">
         <div id="dropdown" class="dropdown">
             <input id="search" type="text">
@@ -43,10 +46,12 @@
             <a href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer" target="_blank"><p>Buffy Wikipedia</p></a>
         </div>
         <div style="display: flex; flex-direction: column;">
-            <button onclick="scrollToBack()">Scroll All Up</button>
-            <button onclick="scrollUp()">Scroll Up</button>
-            <button onclick="scrollDown()">Scroll Down</button>
-            <button onclick="scrollToFront()">Scroll All Down</button>
+            <button onclick="scrollToBack()">Scroll to Beginning</button>
+            <button onclick="scrollUp()">Scroll Backwards (&lt;)</button>
+            <button onclick="scrollDown()">Scroll Forwards (&gt;)</button>
+            <button onclick="scrollToFront()">Scroll to End</button>
+            <button onclick="">Backwards a Season</button>
+            <button onclick="">Forwards a Season</button>
         </div>
     </div>
     <h1>
@@ -62,10 +67,25 @@
         <div id="scene3D" class="scene3D"></div>
     </div>
     </div>
+    </div>
     <script>
         document.getElementById("menu").click();
-        setTimeout(scrollToBack, 300);
+        setTimeout(scrollToBack, 400);
         window.onkeydown = arrowKeyScroll;
+        window.onscroll = updateCardTitleBar;
         //document.body.addEventListener("scroll", scrollToNextCard());
+        /* VANTA.FOG({
+        el: "#container",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0xFF0303,
+            backgroundAlpha: 0
+        }) */
     </script>
 </body>

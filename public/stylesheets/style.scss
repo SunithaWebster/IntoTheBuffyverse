@@ -58,7 +58,7 @@
                     right: 0;
                 }
 
-                @for $i from 0 through 25 {
+                @for $i from 0 through 146 {
                     &:nth-child(#{$i}) {
                         transform: translate3D(random(50) - 25 * 1%,
                             random(100) - 50 * 1%,
@@ -596,6 +596,12 @@ body {
     // overflow: auto;
     // height: 100%;
 
+}
+
+.container {
+    // position: fixed;
+    // top: 0;
+    height: 100vh;
 }
 
 .navbar {
