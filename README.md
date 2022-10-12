@@ -83,12 +83,17 @@ erDiagram
 The server must be running locally with test configuration for the
 integration tests to pass.
 
-```
+A test server can be set up by adding the following into "scripts" within the root package.json:
+
+"start:test": "PORT=<Your test port number> TESTDB_URL=<'Your test MongoDB connection string'> npm start"
+
+The following can then be used to run a test server:
+
+```bash
 npm run start:test
 ```
 
-This starts the server on port `3030` and uses the `acebook_test` MongoDB database,
-so that integration tests do not interact with the development server.
+This would start the server on port `3030` and would use your test MongoDB database, so that integration tests do not interact with the development server.
 
 ### Test
 
@@ -104,6 +109,8 @@ so that integration tests do not interact with the development server.
   ```
 
 ## Setting Up the Database
+
+![Dialogue box for MongoDB connection](/images/DatabaseSetup6.png "Connect to Cluster Dialogue")
 
 1. Create a cluster - https://www.mongodb.com/cloud/atlas/lp/general/try.
 2. Sign Up and verify email address.
