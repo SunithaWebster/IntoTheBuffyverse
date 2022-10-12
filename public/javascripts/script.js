@@ -80,15 +80,16 @@ function arrowKeyScroll(event) {
 
 function cullDistantCards() {
     const allCards = document.getElementById("scene3D").children;
-    allCards.forEach(card => {
-        if ((parseInt(card.id, 10) - scrollY) > 0) {
-            if ((parseInt(card.id, 10) - scrollY) > (25 * 300)) {
-                card.style.display = "none";
+    for (let i = 0; i < allCards.length; i++) {
+    // allCards.forEach(card => {
+        if ((parseInt(allCards[i].id, 10) - scrollY) > 0) {
+            if ((parseInt(allCards[i].id, 10) - scrollY) > (25 * 300)) {
+                allCards[i].style.display = "none";
             } else {
-                card.style.display = "";
+                allCards[i].style.display = "";
             }
         } 
-    });
+    }
 };
 
 const perspectiveOrigin = {
