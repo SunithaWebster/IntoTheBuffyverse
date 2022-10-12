@@ -5,8 +5,6 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="javascripts/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.fog.min.js"></script>
-    {{!-- <script src="vanta.fog.min.js"></script> --}}
     {{!-- <style>
         body {
             overflow-y: hidden;
@@ -74,7 +72,10 @@
         // setTimeout(scrollToBack, 400);
         // setTimeout(scrollToBack, 400);
         window.onkeydown = arrowKeyScroll;
-        window.onscroll = updateCardTitleBar; cullDistantCards;
+        window.onscroll = () => {
+            updateCardTitleBar(); 
+            // cullDistantCards();
+        };
         // let cards = document.getElementById("scene3D").children;
         // () => cards.forEach(card => card.style.display = "none");
         function hideCard() {
@@ -82,20 +83,22 @@
             // testCard.style.display = "none";
             testCard.style.display = "none";
         };
-        setTimeout(hideCard, 400);
+        function testShiftCards() {
+            let cards = document.getElementsByClassName("card_inverted");
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.transform = "translate(0, 50px)";
+            }
+        };
+        function shiftCard() {
+            let testCard2 = document.getElementById("300");
+            // testCard2.style.top = 500;
+            // testCard2.style.left = 500;
+            //testCard2.style.transform = translate(0, 100);
+            testCard2.style.transform = translate3d(80, 20, 20);
+        };
+        // setTimeout(hideCard, 400);
+        // setTimeout(testShiftCards, 400);
+        setTimeout(shiftCard, 800);
         //document.body.addEventListener("scroll", scrollToNextCard());
-        /* VANTA.FOG({
-        el: "#container",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            highlightColor: 0x0,
-            midtoneColor: 0x0,
-            lowlightColor: 0x0,
-            baseColor: 0xFF0303,
-            backgroundAlpha: 0
-        }) */
     </script>
 </body>
