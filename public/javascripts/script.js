@@ -1,5 +1,9 @@
 let episodes = [];
 
+function reverseEpisodesOrder() {
+    episodes.reverse();
+}
+
 function toggleDisplay(tabId) {
     var tab = document.getElementById(tabId);
     if (tab.style.display == "none") {
@@ -9,9 +13,59 @@ function toggleDisplay(tabId) {
     }
 };
 
-// function scrollToNextCard() {
-//     window.scrollTo(0, 1000);
-// }
+function updateCardTitleBar() {
+    var cardId = scrollY / 300;
+}
+
+function scrollToNextCard() {
+    window.scrollTo(0, Math.round(window.scrollY/300) * 300);
+};
+
+function scrollToFront() {
+    window.scrollTo({
+        top: 300,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function scrollToBack() {
+    window.scrollTo({
+        top: (300 * episodes.length),
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function scrollUp() {
+    window.scrollTo({
+        // top: 3600,
+        // top: 3300,
+        // top: 3000,
+        top: (Math.round((scrollY + 300) / 300)) * 300,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function scrollDown() {
+    window.scrollTo({
+        // top: 3600,
+        // top: 3300,
+        // top: 3000,
+        top: (Math.round((scrollY - 300) / 300)) * 300,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function arrowKeyScroll(event) {
+    if (event.code === 'ArrowRight') {
+        scrollDown();
+    } else if (event.code === 'ArrowLeft') {
+        scrollUp();
+    }
+};
 
 const perspectiveOrigin = {
     x: parseFloat(
@@ -32,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode/season/1")
         .then(function (response) {
             episodes = response.data;
+            reverseEpisodesOrder();
             appendEpisodes(episodes);
             window.addEventListener("scroll", moveCamera);
             // var scene = document.getElementById("scene3D");
@@ -91,13 +146,16 @@ function setSceneHeight() {
         scenePerspective * cameraSpeed +
         itemZ * cameraSpeed * numberOfItems;
 
+    // const height =
+    //     300 * episodes.length + 498;
+
     // Update --viewportHeight value
     document.documentElement.style.setProperty("--viewportHeight", height);
 }
 
-function createEpisodeItem(episode, css) {
+function createEpisodeItem(episode, id, css) {
     return `
-        <div class='${css}'>
+        <div id='${id}' class='${css}'>
             <div class='card_left'>
                 <img src='https://images.justwatch.com/poster/257479052/s332/season-3'>
             </div>
@@ -121,9 +179,9 @@ function createEpisodeItem(episode, css) {
     `;
 }
 
-function createEpisodeItem2(episode, css) {
+function createEpisodeItem2(episode, id, css) {
     return `
-        <div class='${css}'>
+        <div id='${id}' class='${css}'>
             <div class='card_right'>
                 <h2>${episode.title}</h2>
                 <div class='card_right__details'>
@@ -217,10 +275,12 @@ function appendEpisodes(episodes) {
         let index = episodes.indexOf(episode);
         if (index % 2 == 0) { // if even as it is
             let css = "card";
-            episodesNodes.push(createEpisodeItem2(episode, css));
+            let id = index + 1;
+            episodesNodes.push(createEpisodeItem2(episode, id, css));
         } else {
             let css = "card_inverted";
-            episodesNodes.push(createEpisodeItem(episode, css));
+            let id = index + 1;
+            episodesNodes.push(createEpisodeItem(episode, id, css));
         }
         
     }

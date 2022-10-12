@@ -42,6 +42,12 @@
             <a href="https://buffy.fandom.com/wiki/Buffy_the_Vampire_Slayer_and_Angel" target="_blank"><p>Buffy Fandom</p></a>
             <a href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer" target="_blank"><p>Buffy Wikipedia</p></a>
         </div>
+        <div style="display: flex; flex-direction: column;">
+            <button onclick="scrollToBack()">Scroll All Up</button>
+            <button onclick="scrollUp()">Scroll Up</button>
+            <button onclick="scrollDown()">Scroll Down</button>
+            <button onclick="scrollToFront()">Scroll All Down</button>
+        </div>
     </div>
     <h1>
     <img
@@ -58,6 +64,8 @@
     </div>
     <script>
         document.getElementById("menu").click();
-        window.addEventListener("scroll", scrollToNextCard);
+        setTimeout(scrollToBack, 300);
+        window.onkeydown = arrowKeyScroll;
+        //document.body.addEventListener("scroll", scrollToNextCard());
     </script>
 </body>
