@@ -31,6 +31,7 @@
     <div class="navbar">
         <div class="logo">
             <p>&ensp;Into the Buffyverse</p>
+            <p id="test" style="margin-left: 300px; color: white;"></p>
         </div>
         <h3 id="title"></h3>
         <img id="menu" style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;" src="images/menuicon2.png" onclick="toggleDisplay('dropdown');">
@@ -70,9 +71,18 @@
     </div>
     <script>
         document.getElementById("menu").click();
-        setTimeout(scrollToBack, 400);
+        // setTimeout(scrollToBack, 400);
+        // setTimeout(scrollToBack, 400);
         window.onkeydown = arrowKeyScroll;
-        window.onscroll = updateCardTitleBar;
+        window.onscroll = updateCardTitleBar; cullDistantCards;
+        // let cards = document.getElementById("scene3D").children;
+        // () => cards.forEach(card => card.style.display = "none");
+        function hideCard() {
+            let testCard = document.getElementById('300');
+            // testCard.style.display = "none";
+            testCard.style.display = "none";
+        };
+        setTimeout(hideCard, 400);
         //document.body.addEventListener("scroll", scrollToNextCard());
         /* VANTA.FOG({
         el: "#container",
