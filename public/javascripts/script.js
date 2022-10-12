@@ -44,11 +44,18 @@ function scrollToBack() {
     });
 };
 
+function scrollTest() {
+    window.scrollTo({
+        top: (parseInt(episodes[102].title, 10)),
+        left: 0,
+        behavior: 'smooth'
+    });
+    let test = document.getElementById("test");
+    test.innerText = episodes[100].title;
+};
+
 function scrollUp() {
     window.scrollTo({
-        // top: 3600,
-        // top: 3300,
-        // top: 3000,
         top: (Math.round((scrollY + 300) / 300)) * 300,
         left: 0,
         behavior: 'smooth'
@@ -57,9 +64,6 @@ function scrollUp() {
 
 function scrollDown() {
     window.scrollTo({
-        // top: 3600,
-        // top: 3300,
-        // top: 3000,
         top: (Math.round((scrollY - 300) / 300)) * 300,
         left: 0,
         behavior: 'smooth'
@@ -73,6 +77,19 @@ function arrowKeyScroll(event) {
         scrollUp();
     }
 };
+
+function cullDistantCards() {
+    const allCards = document.getElementById("scene3D").children;
+    allCards.forEach(card => {
+        if ((parseInt(card.id, 10) - scrollY) > 0) {
+            if ((parseInt(card.id, 10) - scrollY) > (25 * 300)) {
+                card.style.display = "none";
+            } else {
+                card.style.display = "";
+            }
+        } 
+    });
+}
 
 const perspectiveOrigin = {
     x: parseFloat(
@@ -281,13 +298,14 @@ function appendEpisodes(episodes) {
 
     for (episode of episodes) {
         let index = episodesReversed.length - episodesReversed.indexOf(episode);
+        let itemZ = (episodesReversed.indexOf(episode) + 1) * 300;
         if (index % 2 == 0) { // if even as it is
             let css = "card";
-            let id = index;
+            let id = itemZ;
             episodesNodes.push(createEpisodeItem2(episode, id, css));
         } else {
             let css = "card_inverted";
-            let id = index;
+            let id = itemZ;
             episodesNodes.push(createEpisodeItem(episode, id, css));
         }
         
