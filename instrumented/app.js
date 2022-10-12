@@ -10,16 +10,17 @@ const methodOverride = require("method-override");
 const zoomPageRouter = require("./routes/zoompage");
 
 const app = express();
-require('@cypress/code-coverage/middleware/express')(app)
+require("@cypress/code-coverage/middleware/express")(app);
 
 // https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md
 /* istanbul ignore next */
 if (global.__coverage__) {
-  require('@cypress/code-coverage/middleware/express')(app)
+  require("@cypress/code-coverage/middleware/express")(app);
 }
 if (global.__coverage__) {
   // add method "GET /__coverage__" and response with JSON
-  onRequest = (response) => response.sendJSON({ coverage: global.__coverage__ })
+  onRequest = (response) =>
+    response.sendJSON({ coverage: global.__coverage__ });
 }
 
 // view engine setup
