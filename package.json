@@ -42,7 +42,6 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "debug": "^4.3.4",
-    "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
@@ -61,6 +60,7 @@
     "@istanbuljs/nyc-config-babel": "3.0.0",
     "babel-plugin-istanbul": "^6.1.1",
     "cypress": "^10.9.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.24.0",
     "eslint-plugin-react": "^7.31.8",
     "istanbul-lib-coverage": "2.0.5",
