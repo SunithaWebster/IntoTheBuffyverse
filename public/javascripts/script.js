@@ -102,147 +102,165 @@ const dateyear = (date) => {
 }
 
 function createEpisodeItem(episode, css) {
-    return `
-        <div class='${css}'>
-            <div class='card_left'>
-                <img src='${episode.imgurl[0]}'>
-            </div>
-            <div class='card_right'>
-                <h2>${episode.title}</h2>
-                <div class='card_right__details'>
-                    <ul>
-                        <li><b>Season:</b> ${episode.season}</li>
-                        <li><b>Episode:</b> ${episode.episode_number}</li>
-                    </ul>
-                    <ul>
-                        <li><b>Air date:</b> ${dateformat(episode.air_date)}</li>
-                        <li><b>Lore year:</b> ${dateyear(episode.lore_year)}</li>
-                    </ul>
-                    <ul>
-                        <li><b>Director:</b> ${episode.director}</li>
-                    </ul>
-                    <ul>
-                        <li><b>Writers:</b> ${episode.writers}</li>
-                    </ul>
-                    <div class='card_right__review'>
-                    <p><b>Synopsis:</b> ${episode.plot}</p>
-                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+
+    //
+
+    return`
+
+    <div class="blog-card">
+
+        <input type="radio" name="select" id="tap-1" checked>
+        <input type="radio" name="select" id="tap-2">
+        <input type="radio" name="select" id="tap-3">
+        <input type="checkbox" id="imgTap">
+
+        <div class="sliders">
+            <label for="tap-1" class="tap tap-1"></label>
+            <label for="tap-2" class="tap tap-2"></label>
+            <label for="tap-3" class="tap tap-3"></label>
+        </div>
+
+        <div class="inner-part">
+            <div class='${css}'>
+                <div class='card_left'>
+                    <label for="imgTap" class="img">
+                        <img class="img-1" src='${episode.imgurl[0]}'>
+                    </label>
+                </div>
+                <div class='card_right'>
+                    <div class="content content-1">
+                        <h2>${episode.title}</h2>
+                        <div class='card_right__details'>
+                            <ul>
+                                <li><b>Season:</b> ${episode.season}</li>
+                                <li><b>Episode:</b> ${episode.episode_number}</li>
+                            </ul>
+                            <ul>
+                                <li><b>Air date:</b> ${dateformat(episode.air_date)}</li>
+                                <li><b>Lore year:</b> ${dateyear(episode.lore_year)}</li>
+                            </ul>
+                            <ul>
+                                <li><b>Director:</b> ${episode.director}</li>
+                            </ul>
+                            <ul>
+                                <li><b>Writers:</b> ${episode.writers}</li>
+                            </ul>
+                        <div class='card_right__review'>
+                            <p><b>Synopsis:</b> ${episode.plot}</p>
+                            <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    `;
-}
 
-function createEpisodeItem2(episode, css) {
-    return `
-        <div class='${css}'>
-            <div class='card_right'>
-                <h2>${episode.title}</h2>
-                <div class='card_right__details'>
-                    <ul>
-                        <li><b>Season:</b> ${episode.season}</li>
-                        <li><b>Episode:</b> ${episode.episode_number}</li>
-                    </ul>
-                    <ul>
-                        <li><b>Air date:</b> ${episode.air_date}</li>
-                    </ul>
-                    <div class='card_right__review'>
-                    <p><b>Sinopsis:</b> ${episode.plot}</p>
-                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+        <div class="inner-part">
+            <div class='${css}'>
+                
+                <div class='card_right'>
+                    <div class="content content-2">
+                        <h2>${episode.title}</h2>
+                        <p>Characters involved</p>
+                            <div class='card_right__details'>
+                                <div class='characterscontainer'>
+                                    <img class="img-1" src='https://www.wonderwall.com/wp-content/uploads/sites/2/2021/02/shutterstock_editorial_5884304r.jpg?h=800'>
+                                    <img class="img-1" src='https://static.displate.com/857x1200/displate/2021-07-01/216e8525ac06fe26794873766ec39c7b_b5d0db53814e3058f516f471608b4598.jpg'>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class='card_left'>
-                <img src='${episode.imgurl}'>
+        </div>
+
+        <div class="inner-part">
+            <div class='${css}'>
+                <div class='card_left'>
+                    <label for="imgTap" class="img">
+                        <img class="img-3" src='https://assets.vogue.com/photos/5f1f633d1a3e9be5cc00d70f/master/w_2560%2Cc_limit/TSDBUTH_EC045.jpg'>
+                    </label>
+                </div>
+                <div class='card_right'>
+                    <div class="content content-3">
+                        <h2>${episode.title}</h2>
+                            <div class='card_right__details'>
+                                <div class='card_right__review'>
+                                    <p><b>Quote:</b> ${episode.quote}</p>
+                                    <p><b>Trivia:</b> ${episode.trivia}</p>
+                                    <p><b>Last updated:</b> ${episode.updatedAt}</p>
+                                    <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    `;
-}
 
-{
-    /* <h2 class = "eventtitle">${episode.title}</h2>
-              <div>
-                  <p><b>Episode:</b> ${episode.episode_number} <b>Season:</b> ${episode.season}</p>
-                  <p><b>Air date:</b> ${episode.air_date}</p>
-                  <p><b>Director:</b> ${episode.director}</p>
-                  <p><b>Writers:</b> ${episode.writers}</p>
-                  <p><b>Sinopsis:</b> ${episode.plot}</p>
-                  <p><a href = ${episode.imdb_url} target = new >Follow this link for IMDB info</a></p>
-              </div> */
-}
-
-{
-    /*
-      <div class='card_right__rating'>
-      <div class='card_right__rating__stars'>
-      </div>
     </div>
-       <fieldset class='rating'>
-              <input id='star10' name='rating' type='radio' value='10'>
-              <label class='full' for='star10' title='10 stars'></label>
-              <input id='star9half' name='rating' type='radio' value='9 and a half'>
-              <label class='half' for='star9half' title='9.5 stars'></label>
-              <input id='star9' name='rating' type='radio' value='9'>
-              <label class='full' for='star9' title='9 stars'></label>
-              <input id='star8half' name='rating' type='radio' value='8 and a half'>
-              <label class='half' for='star8half' title='8.5 stars'></label>
-              <input id='star8' name='rating' type='radio' value='8'>
-              <label class='full' for='star8' title='8 stars'></label>
-              <input id='star7half' name='rating' type='radio' value='7 and a half'>
-              <label class='half' for='star7half' title='7.5 stars'></label>
-              <input id='star7' name='rating' type='radio' value='7'>
-              <label class='full' for='star7' title='7 stars'></label>
-              <input id='star6half' name='rating' type='radio' value='6 and a half'>
-              <label class='half' for='star6half' title='6.5 stars'></label>
-              <input id='star6' name='rating' type='radio' value='6'>
-              <label class='full' for='star6' title='6 star'></label>
-              <input id='star5half' name='rating' type='radio' value='5 and a half'>
-              <label class='half' for='star5half' title='5.5 stars'></label>
-              <input id='star5' name='rating' type='radio' value='5'>
-              <label class='full' for='star5' title='5 stars'></label>
-              <input id='star4half' name='rating' type='radio' value='4 and a half'>
-              <label class='half' for='star4half' title='4.5 stars'></label>
-              <input id='star4' name='rating' type='radio' value='4'>
-              <label class='full' for='star4' title='4 stars'></label>
-              <input id='star3half' name='rating' type='radio' value='3 and a half'>
-              <label class='half' for='star3half' title='3.5 stars'></label>
-              <input id='star3' name='rating' type='radio' value='3'>
-              <label class='full' for='star3' title='3 stars'></label>
-              <input id='star2half' name='rating' type='radio' value='2 and a half'>
-              <label class='half' for='star2half' title='2.5 stars'></label>
-              <input id='star2' name='rating' type='radio' value='2'>
-              <label class='full' for='star2' title='2 stars'></label>
-              <input id='star1half' name='rating' type='radio' value='1 and a half'>
-              <label class='half' for='star1half' title='1.5 stars'></label>
-              <input id='star1' name='rating' type='radio' value='1'>
-              <label class='full' for='star1' title='1 star'></label>
-              <input id='starhalf' name='rating' type='radio' value='half'>
-              <label class='half' for='starhalf' title='0.5 stars'></label>
-            </fieldset> */
-}
-{
-    /* <div class='card_right__button'>
-  <a href='https://www.youtube.com/watch?v=ot6C1ZKyiME' target='_blank'>WATCH TRAILER</a>
-  </div> */
-}
-// <p><b>Trivia:</b> ${episode.trivia}</p>
 
-function appendEpisodes(episodes) {
+    `;
+}
+
+// 
+
+                        {/* <div class="inner-part">
+                            <label for="imgTap" class="img">
+                                <img class="img-3" src="https://1.bp.blogspot.com/-DI07JFSzcmA/XzzU8sIcjxI/AAAAAAAAAQg/YV0moinU2pE0TnADOEx2CBFyw51-IkkZgCLcBGAsYHQ/s0/Cara%2BMembuat%2BPush%2BNotifications%2Bdi%2BBlog%2Bdengan%2BOneSignal.png">
+                            </label>
+                            <div class="content content-3">
+                                <span>26 December 2019</span>
+                                <div class="title">
+                                    Lorem Ipsum Dolor</div>
+                                <div class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod excepturi nemo commodi sint eum ipsam odit atque aliquam officia impedit.</div>
+                                <button>Read more</button>
+                            </div>
+                        </div> */}
+
+                        function createEpisodeItem2(episode, css) {
+    return `
+                        <div class='${css}'>
+                            <div class='card_right'>
+                                <h2>${episode.title}</h2>
+                                <div class='card_right__details'>
+                                    <ul>
+                                        <li><b>Season:</b> ${episode.season}</li>
+                                        <li><b>Episode:</b> ${episode.episode_number}</li>
+                                    </ul>
+                                    <ul>
+                                        <li><b>Air date:</b> ${episode.air_date}</li>
+                                    </ul>
+                                    <div class='card_right__review'>
+                                        <p><b>Sinopsis:</b> ${episode.plot}</p>
+                                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='card_left'>
+                                <img src='${episode.imgurl}'>
+                            </div>
+                        </div>
+                        `;
+}
+
+                        function appendEpisodes(episodes) {
     const episodesEl = document.querySelector(".viewport .scene3D");
-    let episodesNodes = [];
+                        let episodesNodes = [];
 
-    for (episode of episodes) {
-        let index = episodes.indexOf(episode);
-        if (index % 2 == 0) {
-            // if even as it is
-            let css = "card";
-            episodesNodes.push(createEpisodeItem2(episode, css));
+                        for (episode of episodes) {
+                            let index = episodes.indexOf(episode);
+                        if (index % 2 == 0) {
+                            // if even as it is
+                            let css = "card";
+                        episodesNodes.push(createEpisodeItem2(episode, css));
         } else {
-            let css = "card_inverted";
-            episodesNodes.push(createEpisodeItem(episode, css));
+                            let css = "card_inverted";
+                        episodesNodes.push(createEpisodeItem(episode, css));
         }
     }
 
-    episodesEl.innerHTML = episodesNodes.join(" ");
+                        episodesEl.innerHTML = episodesNodes.join(" ");
 }
+
+
