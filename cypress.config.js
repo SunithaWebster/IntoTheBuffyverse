@@ -8,7 +8,7 @@ module.exports = defineConfig({
       // cypress/integration/**/*.js
       // It's IMPORTANT to return the config object
       // with any changed environment variables
-      on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'))
+      on("file:preprocessor", require("@cypress/code-coverage/use-babelrc"));
       return config;
     },
     specPattern: "cypress/integration/*spec.js",
