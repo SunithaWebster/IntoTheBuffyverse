@@ -103,32 +103,32 @@ const dateyear = (date) => {
 
 function createEpisodeItem(episode, css) {
 
-    //
+    let n = (3*(episode.episode_number-1-1))+1
 
     return`
 
     <div class="blog-card">
 
-        <input type="radio" name="select" id="tap-1" checked>
-        <input type="radio" name="select" id="tap-2">
-        <input type="radio" name="select" id="tap-3">
+        <input type="radio" name="select" id="tap-${n}" checked>
+        <input type="radio" name="select" id="tap-${n+1}">
+        <input type="radio" name="select" id="tap-${n+2}">
         <input type="checkbox" id="imgTap">
 
         <div class="sliders">
-            <label for="tap-1" class="tap tap-1"></label>
-            <label for="tap-2" class="tap tap-2"></label>
-            <label for="tap-3" class="tap tap-3"></label>
+            <label for="tap-1" class="tap tap-${n-2}"></label>
+            <label for="tap-2" class="tap tap-${n+1}"></label>
+            <label for="tap-3" class="tap tap-${n+2}"></label>
         </div>
 
         <div class="inner-part">
             <div class='${css}'>
                 <div class='card_left'>
                     <label for="imgTap" class="img">
-                        <img class="img-1" src='${episode.imgurl[0]}'>
+                        <img class="img-${n}" src='${episode.imgurl[0]}'>
                     </label>
                 </div>
                 <div class='card_right'>
-                    <div class="content content-1">
+                    <div class="content content-${n}">
                         <h2>${episode.title}</h2>
                         <div class='card_right__details'>
                             <ul>
@@ -158,7 +158,7 @@ function createEpisodeItem(episode, css) {
             <div class='${css}'>
                 
                 <div class='card_right'>
-                    <div class="content content-2">
+                    <div class="content content-${n+1}">
                         <h2>${episode.title}</h2>
                         <p>Characters involved</p>
                             <div class='card_right__details'>
@@ -177,17 +177,17 @@ function createEpisodeItem(episode, css) {
             <div class='${css}'>
                 <div class='card_left'>
                     <label for="imgTap" class="img">
-                        <img class="img-3" src='https://assets.vogue.com/photos/5f1f633d1a3e9be5cc00d70f/master/w_2560%2Cc_limit/TSDBUTH_EC045.jpg'>
+                        <img class="img-${n+2}" src='https://assets.vogue.com/photos/5f1f633d1a3e9be5cc00d70f/master/w_2560%2Cc_limit/TSDBUTH_EC045.jpg'>
                     </label>
                 </div>
                 <div class='card_right'>
-                    <div class="content content-3">
+                    <div class="content content-${n+2}">
                         <h2>${episode.title}</h2>
                             <div class='card_right__details'>
                                 <div class='card_right__review'>
                                     <p><b>Quote:</b> ${episode.quote}</p>
                                     <p><b>Trivia:</b> ${episode.trivia}</p>
-                                    <p><b>Last updated:</b> ${episode.updatedAt}</p>
+                                    <p><b>Last updated:</b> ${dateformat(episode.updatedAt)}</p>
                                     <a href='${episode.imdb_url}' target='_blank'>Read more</a>
                                 </div>
                             </div>
