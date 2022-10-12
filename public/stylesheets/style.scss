@@ -52,19 +52,29 @@
 
                 &:nth-child(2n) {
                     left: 0;
+                    margin-left: 80px;
                 }
 
                 &:nth-child(2n + 1) {
                     right: 0;
+                    margin-right: 80px;
                 }
 
                 @for $i from 0 through 146 {
                     &:nth-child(#{$i}) {
-                        transform: translate3D(random(50) - 25 * 1%,
-                            random(100) - 50 * 1%,
+                        transform: translate3D(0,
+                            0,
                             calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
                     }
                 }
+
+                // @for $i from 0 through 146 {
+                //     &:nth-child(#{$i}) {
+                //         transform: translate3D(random(50) - 25 * 1%,
+                //             random(100) - 50 * 1%,
+                //             calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
+                //     }
+                // }
             }
         }
     }

@@ -14,7 +14,7 @@ function updateCardTitleBar() {
     var cardId = Math.round(scrollY / 300);
     var episode = episodes[cardId - 1];
     var title = document.getElementById("title");
-    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title}`;
+    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title} - ${episode.air_date}`;
 }
 
 function centreCard() {
@@ -89,7 +89,7 @@ function cullDistantCards() {
             }
         } 
     });
-}
+};
 
 const perspectiveOrigin = {
     x: parseFloat(
