@@ -7,7 +7,6 @@
   "scripts": {
     "lint": "eslint .",
     "start": "nodemon ./bin/www",
-    "start:test": "PORT=3030 MONGODB_URL='mongodb+srv://SWebScooby:OIbzpV5mDc3au8Sf@buffyverse.go2fcrs.mongodb.net/into_the_buffyverse_test' npm start",
     "test": "npm run lint && npm run test:unit --watchAll --detectOpenHandles && npm run test:integration",
     "test:unit": "jest --watchAll --detectOpenHandles",
     "cypress:open": "cypress open",
@@ -61,6 +60,7 @@
     "@istanbuljs/nyc-config-babel": "3.0.0",
     "babel-plugin-istanbul": "^6.1.1",
     "cypress": "^10.9.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.24.0",
     "eslint-plugin-react": "^7.31.8",
     "istanbul-lib-coverage": "2.0.5",
