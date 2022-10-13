@@ -8,8 +8,21 @@ const methodOverride = require("method-override");
 
 // require new routes here!
 const zoomPageRouter = require("./routes/zoompage");
+const Episode = require("./models/episode")
 
 const app = express();
+require("@cypress/code-coverage/middleware/express")(app);
+
+// https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md
+/* istanbul ignore next */
+if (global.__coverage__) {
+  require("@cypress/code-coverage/middleware/express")(app);
+}
+if (global.__coverage__) {
+  // add method "GET /__coverage__" and response with JSON
+  onRequest = (response) =>
+    response.sendJSON({ coverage: global.__coverage__ });
+}
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -20,6 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("images"));
 app.use(methodOverride("_method"));
 
 app.use(
@@ -54,6 +68,12 @@ const sessionChecker = (req, res, next) => {
 
 // route setup
 app.use("/", zoomPageRouter);
+
+app.get("/api/episodes", (req, res) => {
+  Episode
+    .find()
+    .then(allComposers => res.json(allComposers))
+});
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
