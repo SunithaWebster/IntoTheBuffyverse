@@ -522,5 +522,3 @@ function cullDistantCards() {
 
 //     episodesEl.innerHTML = episodesNodes.join(" ");
 // }
-
-
