@@ -19,7 +19,7 @@
         >
           <p>&ensp;Into the Buffyverse</p>
         </div>
-        <h3 id="title"></h3>
+        <h3 id="title" style="margin-top: 15px; margin-left: 45px; font-size: 55px;" ></h3>
         <img
           id="menu"
           style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;"
@@ -41,22 +41,22 @@
               target="_blank"
               rel="noopener noreferrer"
             >Buffy Wikipedia</a></p>
-          <img
-            id="navmenu"
-            style="height: 30px; position: fixed; left: 0; top: 0; margin-top: 32px; margin-left: 270px; z-index: 12; border: 5px solid #555;"
-            src="images/dropdownarrow.png"
-            onclick="toggleDisplay('navbuttons');"
-          />
-          <div id="navbuttons" class="navbuttons">
-            <button onmousedown="scrollToBack()">Scroll to Beginning (-)</button>
-            <button onmousedown="scrollToFront()">Scroll to End (=)</button>
-            <button onmousedown="scrollUp()">Scroll Backwards (&lt;-)</button>
-            <button onmousedown="scrollDown()">Scroll Forwards (-&gt;)</button>
-            <button onmousedown="scrollBackSeason()">Backwards a Season ([)</button>
-            <button onmousedown="scrollForwardSeason()">Forwards a Season (])</button>
-            <button onclick="pageScrollBy()">Start Auto Scroll (,)</button>
-            <button onclick="stopScrollBy()">Stop Auto Scroll (.)</button>
-          </div>
+        </div>
+        <img
+          id="navmenu"
+          style="height: 30px; position: fixed; left: 0; top: 0; margin-top: 32px; margin-left: 270px; z-index: 12; border: 5px solid #555;"
+          src="images/dropdownarrow.png"
+          onclick="toggleDisplay('navbuttons');"
+        />
+        <div id="navbuttons" class="navbuttons">
+          <button onmousedown="scrollToBack()">Scroll to Beginning (-)</button>
+          <button onmousedown="scrollToFront()">Scroll to End (=)</button>
+          <button onmousedown="scrollUp()">Scroll Backwards (&lt;-)</button>
+          <button onmousedown="scrollDown()">Scroll Forwards (-&gt;)</button>
+          <button onmousedown="scrollBackSeason()">Backwards a Season ([)</button>
+          <button onmousedown="scrollForwardSeason()">Forwards a Season (])</button>
+          <button onclick="pageScrollBy()">Start Auto Scroll (,)</button>
+          <button onclick="stopScrollBy()">Stop Auto Scroll (.)</button>
         </div>
       </div>
       <h1>
@@ -76,7 +76,7 @@
       document.getElementById("menu").click();
       document.getElementById("navmenu").click(); window.onkeydown =
       keyShortcut; window.onscroll = () => { updateCardTitleBar();
-      cullDistantCards(); }; setTimeout(shiftCard, 800);
+      cullDistantCards(); };
       setTimeout(scrollToBack, 800);
     </script>
   </body>
