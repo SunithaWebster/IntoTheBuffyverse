@@ -1,13 +1,9 @@
-let episodes = [];
+//////////////////////// //3D Scene methods// ////////////////////////////
 
-function toggleDisplay(tabId) {
-    var tab = document.getElementById(tabId);
-    if (tab.style.display == "none") {
-        tab.style.display = "";
-    } else if (tab.style.display == "") {
-        tab.style.display = "none";
-    }
-}
+// Global variable array that stores response.data from Axios (see below)
+let episodes = [];
+// Reversed episodes array to reverse default card order (=> back to front)
+let episodesReversed = [];
 
 const perspectiveOrigin = {
     x: parseFloat(
@@ -23,12 +19,16 @@ const perspectiveOrigin = {
     maxGap: 10,
 };
 
+// Pull data for cards from api/database using Axios and set up 3D viewport
 document.addEventListener("DOMContentLoaded", function () {
     axios
+        // Swap below .get statements to pull from api instead of DB
+        // .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode")
         .get("http://localhost:3000/api/episodes")
         .then(function (response) {
             episodes = response.data;
-            appendEpisodes(episodes);
+            episodesReversed = episodes.reverse();
+            appendEpisodes(episodesReversed);
             window.addEventListener("scroll", moveCamera);
             window.addEventListener("mousemove", moveCameraAngle);
             setSceneHeight();
@@ -79,13 +79,11 @@ function setSceneHeight() {
     const cameraSpeed = parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue("--cameraSpeed")
     );
-
     const height =
         window.innerHeight +
         scenePerspective * cameraSpeed +
-        itemZ * cameraSpeed * numberOfItems;
-
-    // Update --viewportHeight value
+        itemZ * cameraSpeed * numberOfItems
+    ;
     document.documentElement.style.setProperty("--viewportHeight", height);
 }
 
@@ -101,9 +99,10 @@ const dateyear = (date) => {
     return datetostring
 }
 
-function createEpisodeItem(episode, css) {
+// Create a "card_inverted" element (appears on left)
+function createEpisodeItem(episode, id, css) {
     return `
-        <div class='${css}'>
+        <div id='${id}' class='${css}'>
             <div class='card_left'>
                 <img src='${episode.imgurl[0]}'>
             </div>
@@ -134,9 +133,10 @@ function createEpisodeItem(episode, css) {
     `;
 }
 
-function createEpisodeItem2(episode, css) {
+// Create a "card" element (appears on right)
+function createEpisodeItem2(episode, id, css) {
     return `
-        <div class='${css}'>
+        <div id='${id}' class='${css}'>
             <div class='card_right'>
                 <h2>${episode.title}</h2>
                 <div class='card_right__details'>
@@ -159,6 +159,217 @@ function createEpisodeItem2(episode, css) {
         </div>
     `;
 }
+
+function appendEpisodes(episodes) {
+    const episodesEl = document.querySelector(".viewport .scene3D");
+    let episodesNodes = [];
+    for (episode of episodes) {
+        let index = episodesReversed.length - episodesReversed.indexOf(episode);
+        let itemZ = (episodesReversed.indexOf(episode) + 1) * 300;
+        if (index % 2 == 0) { // even numbered index card creates card
+            let css = "card";
+            let id = itemZ;
+            episodesNodes.push(createEpisodeItem2(episode, id, css));
+        } else { // odd numbered index card creates card_inverted
+            let css = "card_inverted";
+            let id = itemZ;
+            episodesNodes.push(createEpisodeItem(episode, id, css));
+        }
+    }
+    episodesEl.innerHTML = episodesNodes.join(" ");
+}
+
+//////////////////////// //Zoompage UI methods// /////////////////////////
+
+function toggleDisplay(tabId) {
+    const tab = document.getElementById(tabId);
+    if (tab.style.display == "none") {
+        tab.style.display = "";
+    } else if (tab.style.display == "") {
+        tab.style.display = "none";
+    }
+};
+
+function updateCardTitleBar() {
+    const cardId = Math.round(scrollY / 300);
+    const episode = episodes[cardId - 1];
+    const title = document.getElementById("title");
+    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title}: ${episode.air_date.substring(0,10)}`;
+};
+
+function scrollToFront() {
+    window.scrollTo({
+        top: 300,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function scrollToBack() {
+    window.scrollTo({
+        top: (300 * episodes.length),
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function scrollUp() {
+    window.scrollTo({
+        top: (Math.round((scrollY + 300) / 300)) * 300,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function scrollDown() {
+    window.scrollTo({
+        top: (Math.round((scrollY - 300) / 300)) * 300,
+        left: 0,
+        behavior: 'smooth'
+    });
+};
+
+function scrollForwardSeason(){
+    if (scrollY > 39900) {
+        window.scrollTo({
+            top: 39900,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 33300) {
+        window.scrollTo({
+            top: 33300,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 26700) {
+        window.scrollTo({
+            top: 26700,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 20100) {
+        window.scrollTo({
+            top: 20100,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 13500) {
+        window.scrollTo({
+            top: 13500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 6600) {
+        window.scrollTo({
+            top: 6600,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY <= 6600) {
+        window.scrollTo({
+            top: 300,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+};
+
+function scrollBackSeason(){
+    if (scrollY < 6600) {
+        window.scrollTo({
+            top: 6600,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 13500) {
+        window.scrollTo({
+            top: 13500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 20100) {
+        window.scrollTo({
+            top: 20100,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 26700) {
+        window.scrollTo({
+            top: 26700,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 33300) {
+        window.scrollTo({
+            top: 33300,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 39900) {
+        window.scrollTo({
+            top: 39900,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 43500) {
+        window.scrollTo({
+            top: 43500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+};
+
+// Autoscroll start
+function pageScrollBy() {
+    window.scrollBy(0,-1);
+    scrolldelay = setTimeout(pageScrollBy, 10)
+};
+
+//Autoscroll stop
+function stopScrollBy() {
+    clearTimeout(scrolldelay)
+};
+
+// Add keyboard shortcuts to this method
+function keyShortcut(event) {
+    if (event.code === 'ArrowRight') {
+        scrollDown();
+    } else if (event.code === 'ArrowLeft') {
+        scrollUp();
+    } else if (event.code === 'Minus') {
+        scrollToBack();
+    } else if (event.code === 'Equal') {
+        scrollToFront();
+    } else if (event.code === 'BracketLeft') {
+        scrollBackSeason();
+    } else if (event.code === 'BracketRight') {
+        scrollForwardSeason();
+    } else if (event.code === 'Comma') {
+        pageScrollBy();
+    } else if (event.code === 'Period') {
+        stopScrollBy();
+    } else if (event.code === 'KeyM') {
+        toggleDisplay("dropdown");
+    } else if (event.code === 'KeyN') {
+        toggleDisplay("navbuttons");
+    }
+};
+
+// Hides card elements that are out of view to prevent page slowdown when zooming out
+function cullDistantCards() {
+    const allCards = document.getElementById("scene3D").children;
+    for (let i = 0; i < allCards.length; i++) {
+        if ((parseInt(allCards[i].id, 10) - scrollY) > 0) {
+            if ((parseInt(allCards[i].id, 10) - scrollY) > (25 * 300)) {
+                allCards[i].style.display = "none";
+            } else {
+                allCards[i].style.display = "";
+            }
+        } 
+    }
+};
 
 {
     /* <h2 class = "eventtitle">${episode.title}</h2>
@@ -227,22 +438,3 @@ function createEpisodeItem2(episode, css) {
   </div> */
 }
 // <p><b>Trivia:</b> ${episode.trivia}</p>
-
-function appendEpisodes(episodes) {
-    const episodesEl = document.querySelector(".viewport .scene3D");
-    let episodesNodes = [];
-
-    for (episode of episodes) {
-        let index = episodes.indexOf(episode);
-        if (index % 2 == 0) {
-            // if even as it is
-            let css = "card";
-            episodesNodes.push(createEpisodeItem2(episode, css));
-        } else {
-            let css = "card_inverted";
-            episodesNodes.push(createEpisodeItem(episode, css));
-        }
-    }
-
-    episodesEl.innerHTML = episodesNodes.join(" ");
-}
