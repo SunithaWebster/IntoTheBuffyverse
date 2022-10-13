@@ -1,1 +1,19 @@
-{"parent":null,"pid":25113,"argv":["/Users/sw/.nvm/versions/node/v18.10.0/bin/node","/Users/sw/Projects/IntoTheBuffyverse/node_modules/.bin/nyc","--reporter=html","cypress","run"],"execArgv":[],"cwd":"/Users/sw/Projects/IntoTheBuffyverse","time":1665483352805,"ppid":25112,"coverageFilename":"/Users/sw/Projects/IntoTheBuffyverse/.nyc_output/766388e9-9a7c-4c63-81fe-69b5e7be55e8.json","externalId":"","uuid":"766388e9-9a7c-4c63-81fe-69b5e7be55e8","files":[]}
+{
+  "parent": null,
+  "pid": 25113,
+  "argv": [
+    "/Users/sw/.nvm/versions/node/v18.10.0/bin/node",
+    "/Users/sw/Projects/IntoTheBuffyverse/node_modules/.bin/nyc",
+    "--reporter=html",
+    "cypress",
+    "run"
+  ],
+  "execArgv": [],
+  "cwd": "/Users/sw/Projects/IntoTheBuffyverse",
+  "time": 1665483352805,
+  "ppid": 25112,
+  "coverageFilename": "/Users/sw/Projects/IntoTheBuffyverse/.nyc_output/766388e9-9a7c-4c63-81fe-69b5e7be55e8.json",
+  "externalId": "",
+  "uuid": "766388e9-9a7c-4c63-81fe-69b5e7be55e8",
+  "files": []
+}
