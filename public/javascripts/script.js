@@ -103,21 +103,21 @@ const dateyear = (date) => {
 
 function createEpisodeItem(episode, css) {
 
-    let n = (3*(episode.episode_number-1-1))+1
+    let n = (3*(episode.episode_number-1))+1
 
     return`
 
     <div class="blog-card">
 
-        <input type="radio" name="select" id="tap-${n}" checked>
-        <input type="radio" name="select" id="tap-${n+1}">
-        <input type="radio" name="select" id="tap-${n+2}">
+        <input type="radio" name="select${n}" id="tap-${n}" checked>
+        <input type="radio" name="select${n}" id="tap-${n+1}">
+        <input type="radio" name="select${n}" id="tap-${n+2}">
         <input type="checkbox" id="imgTap">
 
         <div class="sliders">
-            <label for="tap-1" class="tap tap-${n-2}"></label>
-            <label for="tap-2" class="tap tap-${n+1}"></label>
-            <label for="tap-3" class="tap tap-${n+2}"></label>
+            <label for="tap-${n}" class="tap tap-${n}"></label>
+            <label for="tap-${n+1}" class="tap tap-${n+1}"></label>
+            <label for="tap-${n+2}" class="tap tap-${n+2}"></label>
         </div>
 
         <div class="inner-part">
@@ -219,29 +219,101 @@ function createEpisodeItem(episode, css) {
                         </div> */}
 
                         function createEpisodeItem2(episode, css) {
+
+                            let n = (3*(episode.episode_number-1))+1
+
     return `
-                        <div class='${css}'>
-                            <div class='card_right'>
-                                <h2>${episode.title}</h2>
-                                <div class='card_right__details'>
-                                    <ul>
-                                        <li><b>Season:</b> ${episode.season}</li>
-                                        <li><b>Episode:</b> ${episode.episode_number}</li>
-                                    </ul>
-                                    <ul>
-                                        <li><b>Air date:</b> ${episode.air_date}</li>
-                                    </ul>
-                                    <div class='card_right__review'>
-                                        <p><b>Sinopsis:</b> ${episode.plot}</p>
-                                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+
+                        <div class="blog-card">
+                    
+                            <input type="radio" name="select${n}" id="tap-${n}" checked>
+                            <input type="radio" name="select${n}" id="tap-${n+1}">
+                            <input type="radio" name="select${n}" id="tap-${n+2}">
+                            <input type="checkbox" id="imgTap">
+                    
+                            <div class="sliders">
+                                <label for="tap-${n}" class="tap tap-${n}"></label>
+                                <label for="tap-${n+1}" class="tap tap-${n+1}"></label>
+                                <label for="tap-${n+2}" class="tap tap-${n+2}"></label>
+                            </div>
+                    
+                            <div class="inner-part">
+                                <div class='${css}'>
+                                    <div class='card_right'>
+                                        <div class="content content-${n}">
+                                            <h2>${episode.title}</h2>
+                                            <div class='card_right__details'>
+                                                <ul>
+                                                    <li><b>Season:</b> ${episode.season}</li>
+                                                    <li><b>Episode:</b> ${episode.episode_number}</li>
+                                                </ul>
+                                                <ul>
+                                                    <li><b>Air date:</b> ${dateformat(episode.air_date)}</li>
+                                                    <li><b>Lore year:</b> ${dateyear(episode.lore_year)}</li>
+                                                </ul>
+                                                <ul>
+                                                    <li><b>Director:</b> ${episode.director}</li>
+                                                </ul>
+                                                <ul>
+                                                    <li><b>Writers:</b> ${episode.writers}</li>
+                                                </ul>
+                                            <div class='card_right__review'>
+                                                <p><b>Synopsis:</b> ${episode.plot}</p>
+                                                <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='card_left'>
+                                    <label for="imgTap" class="img">
+                                        <img class="img-${n}" src='${episode.imgurl[0]}'>
+                                    </label>
+                                </div>
+                            </div>
+                    
+                            <div class="inner-part">
+                                <div class='${css}'>
+                                    <div class='card_right'>
+                                        <div class="content content-${n+1}">
+                                            <h2>${episode.title}</h2>
+                                            <p>Characters involved</p>
+                                                <div class='card_right__details'>
+                                                    <div class='characterscontainer'>
+                                                        <img src='https://www.wonderwall.com/wp-content/uploads/sites/2/2021/02/shutterstock_editorial_5884304r.jpg?h=800'>
+                                                        <img src='https://static.displate.com/857x1200/displate/2021-07-01/216e8525ac06fe26794873766ec39c7b_b5d0db53814e3058f516f471608b4598.jpg'>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class='card_left'>
-                                <img src='${episode.imgurl}'>
+                    
+                            <div class="inner-part">
+                                <div class='card_right'>
+                                    <div class="content content-${n+2}">
+                                        <h2>${episode.title}</h2>
+                                        <div class='card_right__details'>
+                                            <div class='card_right__review'>
+                                                <p><b>Quote:</b> ${episode.quote}</p>
+                                                <p><b>Trivia:</b> ${episode.trivia}</p>
+                                                <p><b>Last updated:</b> ${dateformat(episode.updatedAt)}</p>
+                                                <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='card_left'>
+                                    <label for="imgTap" class="img">
+                                        <img class="img-${n+2}" src='https://m.media-amazon.com/images/M/MV5BOTVlZTA4MjUtMTZiMS00MmVjLThlZGItOTBiZjI4NDYzZTQ4XkEyXkFqcGdeQXVyMjU3NzUyMTU@._V1_.jpg'>
+                                    </label>
+                                </div>
                             </div>
+                                
                         </div>
+                    
                         `;
+
 }
 
                         function appendEpisodes(episodes) {
