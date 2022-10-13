@@ -14,18 +14,7 @@ function updateCardTitleBar() {
     var cardId = Math.round(scrollY / 300);
     var episode = episodes[cardId - 1];
     var title = document.getElementById("title");
-    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title} - ${episode.air_date}`;
-};
-
-function centreCard() {
-    var cardId = Math.round(scrollY / 300);
-    var episode = episodes[cardId - 1];
-    var currentCard = document.getElementById(cardId.toString);
-    currentCard.style.transform = "translateX(-50%)";
-};
-
-function scrollToNextCard() {
-    window.scrollTo(0, Math.round(window.scrollY/300) * 300);
+    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title}: ${episode.air_date.substring(0,10)}`;
 };
 
 function scrollToFront() {
@@ -42,199 +31,6 @@ function scrollToBack() {
         left: 0,
         behavior: 'smooth'
     });
-};
-
-function scrollTest() {
-    window.scrollTo({
-        top: (parseInt(episodes[102].title, 10)),
-        left: 0,
-        behavior: 'smooth'
-    });
-    let test = document.getElementById("test");
-    test.innerText = episodes[100].title;
-};
-
-function scrollUp() {
-    window.scrollTo({
-        top: (Math.round((scrollY + 300) / 300)) * 300,
-        left: 0,
-        behavior: 'smooth'
-    });
-};
-
-function scrollDown() {
-    window.scrollTo({
-        top: (Math.round((scrollY - 300) / 300)) * 300,
-        left: 0,
-        behavior: 'smooth'
-    });
-};
-
-function scrollForwardSeason(){
-    if (scrollY > 39900) {
-        window.scrollTo({
-            top: 39900,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY > 33300) {
-        window.scrollTo({
-            top: 33300,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY > 26700) {
-        window.scrollTo({
-            top: 26700,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY > 20100) {
-        window.scrollTo({
-            top: 20100,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY > 13500) {
-        window.scrollTo({
-            top: 13500,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY > 6600) {
-        window.scrollTo({
-            top: 6600,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY <= 6600) {
-        window.scrollTo({
-            top: 300,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
-};
-
-function scrollBackSeason(){
-    if (scrollY < 6600) {
-        window.scrollTo({
-            top: 6600,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY < 13500) {
-        window.scrollTo({
-            top: 13500,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY < 20100) {
-        window.scrollTo({
-            top: 20100,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY < 26700) {
-        window.scrollTo({
-            top: 26700,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY < 33300) {
-        window.scrollTo({
-            top: 33300,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY < 39900) {
-        window.scrollTo({
-            top: 39900,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else if (scrollY < 43500) {
-        window.scrollTo({
-            top: 43500,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
-};
-
-function pageScrollBy() {
-    window.scrollBy(0,-1);
-    scrolldelay = setTimeout(pageScrollBy, 10)
-};
-
-function stopScrollBy() {
-    clearTimeout(scrolldelay)
-};
-
-function arrowKeyScroll(event) {
-    if (event.code === 'ArrowRight') {
-        scrollDown();
-    } else if (event.code === 'ArrowLeft') {
-        scrollUp();
-    }
-};
-
-function cullDistantCards() {
-    const allCards = document.getElementById("scene3D").children;
-    for (let i = 0; i < allCards.length; i++) {
-    // allCards.forEach(card => {
-        if ((parseInt(allCards[i].id, 10) - scrollY) > 0) {
-            if ((parseInt(allCards[i].id, 10) - scrollY) > (25 * 300)) {
-                allCards[i].style.display = "none";
-            } else {
-                allCards[i].style.display = "";
-            }
-        } 
-    }
-};
-
-function updateCardTitleBar() {
-    var cardId = Math.round(scrollY / 300);
-    var episode = episodes[cardId - 1];
-    var title = document.getElementById("title");
-    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title} - ${episode.air_date}`;
-}
-
-function centreCard() {
-    var cardId = Math.round(scrollY / 300);
-    var episode = episodes[cardId - 1];
-    var currentCard = document.getElementById(cardId.toString);
-    currentCard.style.transform = "translateX(-50%)";
-}
-
-function scrollToNextCard() {
-    window.scrollTo(0, Math.round(window.scrollY/300) * 300);
-};
-
-function scrollToFront() {
-    window.scrollTo({
-        top: 300,
-        left: 0,
-        behavior: 'smooth'
-    });
-};
-
-function scrollToBack() {
-    window.scrollTo({
-        top: (300 * episodes.length),
-        left: 0,
-        behavior: 'smooth'
-    });
-};
-
-function scrollTest() {
-    window.scrollTo({
-        top: (parseInt(episodes[102].title, 10)),
-        left: 0,
-        behavior: 'smooth'
-    });
-    let test = document.getElementById("test");
-    test.innerText = episodes[100].title;
 };
 
 function scrollUp() {
@@ -392,7 +188,7 @@ const perspectiveOrigin = {
 
 document.addEventListener("DOMContentLoaded", function () {
     axios
-        .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode")
+        // .get("https://buffy-the-vampire-slayer-api.herokuapp.com/episode")
         .get("http://localhost:3000/api/episodes")
         .then(function (response) {
             episodes = response.data;
