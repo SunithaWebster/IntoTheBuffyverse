@@ -1,1 +1,17 @@
-{"parent":null,"pid":25114,"argv":["/Users/sw/.nvm/versions/node/v18.10.0/bin/node","/Users/sw/Projects/IntoTheBuffyverse/node_modules/.bin/cypress","run"],"execArgv":[],"cwd":"/Users/sw/Projects/IntoTheBuffyverse","time":1665483354759,"ppid":25113,"coverageFilename":"/Users/sw/Projects/IntoTheBuffyverse/.nyc_output/b02dd7cc-f623-4f6a-a73b-45c288cd6ab0.json","externalId":"","uuid":"b02dd7cc-f623-4f6a-a73b-45c288cd6ab0","files":[]}
+{
+  "parent": null,
+  "pid": 25114,
+  "argv": [
+    "/Users/sw/.nvm/versions/node/v18.10.0/bin/node",
+    "/Users/sw/Projects/IntoTheBuffyverse/node_modules/.bin/cypress",
+    "run"
+  ],
+  "execArgv": [],
+  "cwd": "/Users/sw/Projects/IntoTheBuffyverse",
+  "time": 1665483354759,
+  "ppid": 25113,
+  "coverageFilename": "/Users/sw/Projects/IntoTheBuffyverse/.nyc_output/b02dd7cc-f623-4f6a-a73b-45c288cd6ab0.json",
+  "externalId": "",
+  "uuid": "b02dd7cc-f623-4f6a-a73b-45c288cd6ab0",
+  "files": []
+}

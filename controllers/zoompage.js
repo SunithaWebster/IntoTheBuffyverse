@@ -6,8 +6,13 @@ const ZoomPageController = {
   About: (req, res) => {
     res.render("about", { title: "About", session: req.session });
   },
-  Test: (req, res) => {
-    res.render("zoompage/test", { title: "Into the Buffyverse~" });
+
+  Roadmap: (req, res) => {
+    res.render("roadmap", { title: "Roadmap" });
+  },
+
+  Character: (req, res) => {
+    res.render("character", { title: "Character" });
   },
 };
 

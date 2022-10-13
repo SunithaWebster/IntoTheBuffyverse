@@ -6,6 +6,10 @@ const ZoomPageController = {
   About: (req, res) => {
     res.render("about", { title: "About", session: req.session });
   },
+
+  Roadmap: (req, res) => {
+    res.render("roadmap", { title: "Roadmap" });
+  },
 };
 
 module.exports = ZoomPageController;

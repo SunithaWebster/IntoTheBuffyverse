@@ -1,0 +1,71 @@
+<head>
+  <link rel="stylesheet" href="stylesheets/style.scss" />
+  <script src="javascripts/script.js"></script>
+</head>
+
+<body>
+  {{! <embed id="music" src="/sounds/It-Doesnt-Matter.mp3" loop="true" autostart="true" volume="2" width="2" height="0"> }}
+  {{! <audio autoplay id="music">
+        <source src="/sounds/It-Doesnt-Matter.mp3">
+    </audio> }}
+  <div class="navbar">
+    <div class="logo">
+      <p>&ensp;Into the Buffyverse</p>
+    </div>
+    <h3>Roadmap</h3>
+    <img
+      id="menu"
+      style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;"
+      src="images/menuicon2.png"
+      onclick="toggleDisplay('dropdown');"
+    />
+    <div id="dropdown" class="dropdown">
+      <p><a href="/">Home</a></p>
+      <p><a href="/about">About</a></p>
+      <p><a href="/character">Characters</a></p>
+      <p><a href="/roadmap">Roadmap</a></p>
+      <p><a
+          href="https://buffy.fandom.com/wiki/Buffy_the_Vampire_Slayer_and_Angel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Buffy Fandom</a></p>
+      <p><a
+          href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Buffy Wikipedia</a></p>
+    </div>
+  </div>
+  <div class="roadmap">
+    <ul>
+      <li>Story Events
+        <p>In future, users would be able to navigate the Buffyverse timeline
+          via significant story events, whether standalone or spanning several
+          episodes</p>
+      </li>
+      <li>FAQ
+        <p>As use of the site increases, user questions would be collected,
+          analysed and answers to the most useful ones would be posted under
+          this heading</p>
+      </li>
+      <li>Community
+        <p>Dependent on user engagement, a forum / community could be
+          established to introduce interactive user experience</p>
+      </li>
+    </ul>
+  </div>
+  <h1>
+    <img
+      class="logo"
+      src="https://seeklogo.com/images/B/Buffy_the_Vampire_Slayer-logo-1E820809C0-seeklogo.com.png"
+      alt="Buffy the Vampire Slayer Logo"
+    />
+    {{! Buffy the Vampire Slayer }}
+  </h1>
+  {{! <div class="viewport">
+    <div class="scene3D-container">
+      <div class="scene3D"></div>
+    </div>
+  </div> }}
+  <script>document.getElementById("menu").click()</script>
+</body>
