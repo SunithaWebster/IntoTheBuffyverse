@@ -57,82 +57,82 @@
   right: 0;
 }
 .viewport .scene3D-container .scene3D > div:nth-child(0) {
-  transform: translate3D(14%, 35%, calc(var(--itemZ) * var(--cameraSpeed) * 0 * -1px));
+  transform: translate3D(-21%, 5%, calc(var(--itemZ) * var(--cameraSpeed) * 0 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(1) {
-  transform: translate3D(-2%, 44%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px));
+  transform: translate3D(16%, 38%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(2) {
-  transform: translate3D(6%, 43%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -1px));
+  transform: translate3D(-10%, -14%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(3) {
-  transform: translate3D(-9%, 4%, calc(var(--itemZ) * var(--cameraSpeed) * 3 * -1px));
+  transform: translate3D(-16%, 25%, calc(var(--itemZ) * var(--cameraSpeed) * 3 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(4) {
-  transform: translate3D(5%, -19%, calc(var(--itemZ) * var(--cameraSpeed) * 4 * -1px));
+  transform: translate3D(-18%, 16%, calc(var(--itemZ) * var(--cameraSpeed) * 4 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(5) {
-  transform: translate3D(-1%, -12%, calc(var(--itemZ) * var(--cameraSpeed) * 5 * -1px));
+  transform: translate3D(-20%, 26%, calc(var(--itemZ) * var(--cameraSpeed) * 5 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(6) {
-  transform: translate3D(-7%, -1%, calc(var(--itemZ) * var(--cameraSpeed) * 6 * -1px));
+  transform: translate3D(-1%, 48%, calc(var(--itemZ) * var(--cameraSpeed) * 6 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(7) {
-  transform: translate3D(-17%, -17%, calc(var(--itemZ) * var(--cameraSpeed) * 7 * -1px));
+  transform: translate3D(0%, -45%, calc(var(--itemZ) * var(--cameraSpeed) * 7 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(8) {
-  transform: translate3D(-22%, 22%, calc(var(--itemZ) * var(--cameraSpeed) * 8 * -1px));
+  transform: translate3D(5%, -7%, calc(var(--itemZ) * var(--cameraSpeed) * 8 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(9) {
-  transform: translate3D(0%, -42%, calc(var(--itemZ) * var(--cameraSpeed) * 9 * -1px));
+  transform: translate3D(22%, -30%, calc(var(--itemZ) * var(--cameraSpeed) * 9 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(10) {
-  transform: translate3D(14%, 30%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -1px));
+  transform: translate3D(-9%, 37%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(11) {
-  transform: translate3D(-13%, 23%, calc(var(--itemZ) * var(--cameraSpeed) * 11 * -1px));
+  transform: translate3D(-21%, -13%, calc(var(--itemZ) * var(--cameraSpeed) * 11 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(12) {
-  transform: translate3D(-21%, -11%, calc(var(--itemZ) * var(--cameraSpeed) * 12 * -1px));
+  transform: translate3D(20%, -26%, calc(var(--itemZ) * var(--cameraSpeed) * 12 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(13) {
-  transform: translate3D(0%, -35%, calc(var(--itemZ) * var(--cameraSpeed) * 13 * -1px));
+  transform: translate3D(-22%, 14%, calc(var(--itemZ) * var(--cameraSpeed) * 13 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(14) {
-  transform: translate3D(-15%, -21%, calc(var(--itemZ) * var(--cameraSpeed) * 14 * -1px));
+  transform: translate3D(-16%, -28%, calc(var(--itemZ) * var(--cameraSpeed) * 14 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(15) {
-  transform: translate3D(22%, 18%, calc(var(--itemZ) * var(--cameraSpeed) * 15 * -1px));
+  transform: translate3D(9%, 27%, calc(var(--itemZ) * var(--cameraSpeed) * 15 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(16) {
-  transform: translate3D(17%, 24%, calc(var(--itemZ) * var(--cameraSpeed) * 16 * -1px));
+  transform: translate3D(0%, -20%, calc(var(--itemZ) * var(--cameraSpeed) * 16 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(17) {
-  transform: translate3D(17%, 25%, calc(var(--itemZ) * var(--cameraSpeed) * 17 * -1px));
+  transform: translate3D(14%, -42%, calc(var(--itemZ) * var(--cameraSpeed) * 17 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(18) {
-  transform: translate3D(0%, 28%, calc(var(--itemZ) * var(--cameraSpeed) * 18 * -1px));
+  transform: translate3D(-4%, 36%, calc(var(--itemZ) * var(--cameraSpeed) * 18 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(19) {
-  transform: translate3D(8%, 6%, calc(var(--itemZ) * var(--cameraSpeed) * 19 * -1px));
+  transform: translate3D(-17%, -6%, calc(var(--itemZ) * var(--cameraSpeed) * 19 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(20) {
-  transform: translate3D(-15%, -31%, calc(var(--itemZ) * var(--cameraSpeed) * 20 * -1px));
+  transform: translate3D(-22%, -28%, calc(var(--itemZ) * var(--cameraSpeed) * 20 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(21) {
-  transform: translate3D(1%, -29%, calc(var(--itemZ) * var(--cameraSpeed) * 21 * -1px));
+  transform: translate3D(-2%, 41%, calc(var(--itemZ) * var(--cameraSpeed) * 21 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(22) {
-  transform: translate3D(10%, 49%, calc(var(--itemZ) * var(--cameraSpeed) * 22 * -1px));
+  transform: translate3D(-8%, 10%, calc(var(--itemZ) * var(--cameraSpeed) * 22 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(23) {
-  transform: translate3D(21%, 14%, calc(var(--itemZ) * var(--cameraSpeed) * 23 * -1px));
+  transform: translate3D(-12%, -1%, calc(var(--itemZ) * var(--cameraSpeed) * 23 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(24) {
-  transform: translate3D(-4%, -41%, calc(var(--itemZ) * var(--cameraSpeed) * 24 * -1px));
+  transform: translate3D(10%, 7%, calc(var(--itemZ) * var(--cameraSpeed) * 24 * -1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(25) {
-  transform: translate3D(-16%, 28%, calc(var(--itemZ) * var(--cameraSpeed) * 25 * -1px));
+  transform: translate3D(-1%, 47%, calc(var(--itemZ) * var(--cameraSpeed) * 25 * -1px));
 }
 
 /* ----------
@@ -227,7 +227,6 @@ h1 .logo {
   position: absolute;
   left: 0;
   right: 0;
-  margin: auto;
   top: 0;
   bottom: 0;
   border-radius: 10px;
@@ -269,7 +268,7 @@ h1 .logo {
   font-weight: 700;
   text-align: center;
   font-size: 36px;
-  margin: 50px 10px 40px 0;
+  margin: 40px 10px 40px 0;
   padding: 0 0 0 20px;
   letter-spacing: 1px;
 }

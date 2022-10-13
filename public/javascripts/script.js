@@ -156,18 +156,16 @@ function createEpisodeItem(episode, css) {
 
         <div class="inner-part">
             <div class='${css}'>
-                
-                <div class='card_right'>
-                    <div class="content content-${n+1}">
-                        <h2>${episode.title}</h2>
-                        <p>Characters involved</p>
-                            <div class='card_right__details'>
-                                <div class='characterscontainer'>
-                                    <img class="img-1" src='https://www.wonderwall.com/wp-content/uploads/sites/2/2021/02/shutterstock_editorial_5884304r.jpg?h=800'>
-                                    <img class="img-1" src='https://static.displate.com/857x1200/displate/2021-07-01/216e8525ac06fe26794873766ec39c7b_b5d0db53814e3058f516f471608b4598.jpg'>
-                                </div>
-                            </div>
-                        </div>
+                <div class="content content-${n+1}" style="width: 100%;">
+                    <div class="chartitle">
+                        <h2>Main cast starring:</h2>
+                    </div>
+                    <div class='characterscontainer'>
+                        <img class="charimg" src='https://www.wonderwall.com/wp-content/uploads/sites/2/2021/02/shutterstock_editorial_5884304r.jpg?h=800'>
+                        <img class="charimg" src='https://static.displate.com/857x1200/displate/2021-07-01/216e8525ac06fe26794873766ec39c7b_b5d0db53814e3058f516f471608b4598.jpg'>
+                        <img class="charimg" src='https://i.pinimg.com/originals/c8/4b/3e/c84b3e85d52475b50f126a998ea1e855.jpg'>
+                        <img class="charimg" src='https://i.pinimg.com/736x/8c/bc/73/8cbc73686a4f84bd45a89b0a20e0ad0c.jpg'>
+                        <img class="charimg" src='https://static.wikia.nocookie.net/buffy/images/5/52/Giles-S1-03.jpg'>
                     </div>
                 </div>
             </div>
@@ -175,20 +173,17 @@ function createEpisodeItem(episode, css) {
 
         <div class="inner-part">
             <div class='${css}'>
-                <div class='card_left'>
-                    <label for="imgTap" class="img">
-                        <img class="img-${n+2}" src='https://assets.vogue.com/photos/5f1f633d1a3e9be5cc00d70f/master/w_2560%2Cc_limit/TSDBUTH_EC045.jpg'>
-                    </label>
-                </div>
-                <div class='card_right'>
+                <div class='triviainfo'>
                     <div class="content content-${n+2}">
-                        <h2>${episode.title}</h2>
                             <div class='card_right__details'>
                                 <div class='card_right__review'>
-                                    <p><b>Quote:</b> ${episode.quote}</p>
-                                    <p><b>Trivia:</b> ${episode.trivia}</p>
-                                    <p><b>Last updated:</b> ${dateformat(episode.updatedAt)}</p>
-                                    <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                                    <h2 class="thirdslide">${episode.title}</h2>
+                                    <div class='thirdcardinfo'>
+                                        <p><b>Quote:</b> ${episode.quote}</p>
+                                        <p><b>Trivia:</b> ${episode.trivia}</p>
+                                        <p><b>Last updated:</b> ${dateformat(episode.updatedAt)}</p>
+                                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -203,6 +198,9 @@ function createEpisodeItem(episode, css) {
 }
 
 // 
+
+{/* <h2>${episode.title}</h2>
+<p>Characters involved</p> */}
 
                         {/* <div class="inner-part">
                             <label for="imgTap" class="img">
@@ -272,43 +270,44 @@ function createEpisodeItem(episode, css) {
                             </div>
                     
                             <div class="inner-part">
-                                <div class='${css}'>
-                                    <div class='card_right'>
-                                        <div class="content content-${n+1}">
-                                            <h2>${episode.title}</h2>
-                                            <p>Characters involved</p>
-                                                <div class='card_right__details'>
-                                                    <div class='characterscontainer'>
-                                                        <img src='https://www.wonderwall.com/wp-content/uploads/sites/2/2021/02/shutterstock_editorial_5884304r.jpg?h=800'>
-                                                        <img src='https://static.displate.com/857x1200/displate/2021-07-01/216e8525ac06fe26794873766ec39c7b_b5d0db53814e3058f516f471608b4598.jpg'>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class='${css}'>
+                <div class="content content-${n+1}" style="width: 100%;">
+                    <div class="chartitle">
+                        <h2>Main cast starring:</h2>
+                    </div>
+                    <div class='characterscontainer'>
+                        <img class="charimg" src='https://www.wonderwall.com/wp-content/uploads/sites/2/2021/02/shutterstock_editorial_5884304r.jpg?h=800'>
+                        <img class="charimg" src='https://static.displate.com/857x1200/displate/2021-07-01/216e8525ac06fe26794873766ec39c7b_b5d0db53814e3058f516f471608b4598.jpg'>
+                        <img class="charimg" src='https://i.pinimg.com/originals/c8/4b/3e/c84b3e85d52475b50f126a998ea1e855.jpg'>
+                        <img class="charimg" src='https://i.pinimg.com/736x/8c/bc/73/8cbc73686a4f84bd45a89b0a20e0ad0c.jpg'>
+                        <img class="charimg" src='https://static.wikia.nocookie.net/buffy/images/5/52/Giles-S1-03.jpg'>
+                    </div>
+                </div>
+            </div>
+        </div>
+
                     
                             <div class="inner-part">
-                                <div class='card_right'>
-                                    <div class="content content-${n+2}">
-                                        <h2>${episode.title}</h2>
-                                        <div class='card_right__details'>
-                                            <div class='card_right__review'>
-                                                <p><b>Quote:</b> ${episode.quote}</p>
-                                                <p><b>Trivia:</b> ${episode.trivia}</p>
-                                                <p><b>Last updated:</b> ${dateformat(episode.updatedAt)}</p>
-                                                <a href='${episode.imdb_url}' target='_blank'>Read more</a>
-                                            </div>
-                                        </div>
+            <div class='${css}'>
+                <div class='triviainfo'>
+                    <div class="content content-${n+2}">
+                            <div class='card_right__details'>
+                                <div class='card_right__review'>
+                                <h2 class="thirdslide">${episode.title}</h2>
+                                    <div class='thirdcardinfo'>
+                                        
+                                        <p><b>Quote:</b> ${episode.quote}</p>
+                                        <p><b>Trivia:</b> ${episode.trivia}</p>
+                                        <p><b>Last updated:</b> ${dateformat(episode.updatedAt)}</p>
+                                        <a href='${episode.imdb_url}' target='_blank'>Read more</a>
                                     </div>
                                 </div>
-                                <div class='card_left'>
-                                    <label for="imgTap" class="img">
-                                        <img class="img-${n+2}" src='https://m.media-amazon.com/images/M/MV5BOTVlZTA4MjUtMTZiMS00MmVjLThlZGItOTBiZjI4NDYzZTQ4XkEyXkFqcGdeQXVyMjU3NzUyMTU@._V1_.jpg'>
-                                    </label>
-                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                                 
                         </div>
                     
@@ -322,15 +321,15 @@ function createEpisodeItem(episode, css) {
 
                         for (episode of episodes) {
                             let index = episodes.indexOf(episode);
-                        if (index % 2 == 0) {
-                            // if even as it is
-                            let css = "card";
-                        episodesNodes.push(createEpisodeItem2(episode, css));
-        } else {
+        //                 if (index % 2 == 0) {
+        //                     // if even as it is
+        //                     let css = "card";
+        //                 episodesNodes.push(createEpisodeItem2(episode, css));
+        // } else {
                             let css = "card_inverted";
                         episodesNodes.push(createEpisodeItem(episode, css));
         }
-    }
+    // }
 
                         episodesEl.innerHTML = episodesNodes.join(" ");
 }
