@@ -16,7 +16,7 @@ const EpisodeSchema = new mongoose.Schema({
   imdb_url: String,
   imgurl: Array,
   createdAt: Date,
-  updatedAt: Date
+  updatedAt: Date,
 });
 
 const Episode = mongoose.model("Episode", EpisodeSchema);

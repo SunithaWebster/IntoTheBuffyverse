@@ -8,7 +8,7 @@ const methodOverride = require("method-override");
 
 // require new routes here!
 const zoomPageRouter = require("./routes/zoompage");
-const Episode = require("./models/episode")
+const Episode = require("./models/episode");
 
 const app = express();
 require("@cypress/code-coverage/middleware/express")(app);
@@ -70,9 +70,7 @@ const sessionChecker = (req, res, next) => {
 app.use("/", zoomPageRouter);
 
 app.get("/api/episodes", (req, res) => {
-  Episode
-    .find()
-    .then(allComposers => res.json(allComposers))
+  Episode.find().then((allComposers) => res.json(allComposers));
 });
 
 // catch 404 and forward to error handler
