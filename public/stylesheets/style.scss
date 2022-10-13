@@ -682,20 +682,6 @@ cursor: pointer;
     cursor: pointer;
 }
 
-#bg-preview {
-    position: fixed;
-    top: 0;
-    // left: 0%;
-    // right: 0%;
-    margin-top: 4%;
-    margin-right: 7%;
-    height: 150%;
-    animation-duration: 3s;
-    animation-name: fadein;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
 #search {
   background: url("images/searchicon.png") no-repeat left;
   color: #ffffff;

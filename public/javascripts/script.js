@@ -14,16 +14,7 @@ function updateCardTitleBar() {
     var cardId = Math.round(scrollY / 300);
     var episode = episodes[cardId - 1];
     var title = document.getElementById("title");
-    var bgPreview = document.getElementById("bg-preview");
     title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title}: ${episode.air_date.substring(0,10)}`;
-    bgPreview.src=`${episode.imgurl}`;
-    if (document.getElementById(`${cardId}`).classList.contains("card")) {
-        bgPreview.style.left = "50%";
-        bgPreview.style.right = "0";
-    } else {
-        bgPreview.style.left = "0";
-        bgPreview.style.right = "50%";
-    }
 };
 
 function scrollToFront() {
@@ -164,6 +155,22 @@ function arrowKeyScroll(event) {
         scrollDown();
     } else if (event.code === 'ArrowLeft') {
         scrollUp();
+    } else if (event.code === 'Minus') {
+        scrollToBack();
+    } else if (event.code === 'Equal') {
+        scrollToFront();
+    } else if (event.code === 'BracketLeft') {
+        scrollBackSeason();
+    } else if (event.code === 'BracketRight') {
+        scrollForwardSeason();
+    } else if (event.code === 'Comma') {
+        pageScrollBy();
+    } else if (event.code === 'Period') {
+        stopScrollBy();
+    } else if (event.code === 'KeyM') {
+        toggleDisplay("dropdown");
+    } else if (event.code === 'KeyN') {
+        toggleDisplay("navbuttons");
     }
 };
 

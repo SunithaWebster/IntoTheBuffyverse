@@ -971,22 +971,6 @@ button {
   cursor: pointer;
 }
 
-#bg-preview {
-  position: fixed;
-  top: 0;
-  margin-top: 4%;
-  margin-right: 7%;
-  height: 150%;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-name: fadein;
-          animation-name: fadein;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-}
-
 #search {
   background: url("images/searchicon.png") no-repeat left;
   color: #ffffff;

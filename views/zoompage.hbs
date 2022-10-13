@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <img id="bg-preview">
     <div id="container" class="container">
     <div class="navbar">
         <div style="display: block;" class="logo" onclick="toggleDisplay('navbuttons');">
@@ -31,14 +30,14 @@
         </div>
         <img id="navmenu" style="height: 30px; position: fixed; left: 0; top: 0; margin-top: 32px; margin-left: 270px; z-index: 12; border: 5px solid #555;" src="images/dropdownarrow.png" onclick="toggleDisplay('navbuttons');">
         <div id="navbuttons" class="navbuttons">
-            <button onmousedown="scrollToBack()">Scroll to Beginning</button>
-            <button onmousedown="scrollToFront()">Scroll to End</button>
-            <button onmousedown="scrollUp()">Scroll Backwards (&lt;)</button>
-            <button onmousedown="scrollDown()">Scroll Forwards (&gt;)</button>
-            <button onmousedown="scrollBackSeason()">Backwards a Season</button>
-            <button onmousedown="scrollForwardSeason()">Forwards a Season</button>
-            <button onclick="pageScrollBy()">Start Auto Scroll</button>
-            <button onclick="stopScrollBy()">Stop Auto Scroll</button>
+            <button onmousedown="scrollToBack()">Scroll to Beginning (-)</button>
+            <button onmousedown="scrollToFront()">Scroll to End (=)</button>
+            <button onmousedown="scrollUp()">Scroll Backwards (&lt;-)</button>
+            <button onmousedown="scrollDown()">Scroll Forwards (-&gt;)</button>
+            <button onmousedown="scrollBackSeason()">Backwards a Season ([)</button>
+            <button onmousedown="scrollForwardSeason()">Forwards a Season (])</button>
+            <button onclick="pageScrollBy()">Start Auto Scroll (,)</button>
+            <button onclick="stopScrollBy()">Stop Auto Scroll (.)</button>
         </div>
     </div>
     <h1>
