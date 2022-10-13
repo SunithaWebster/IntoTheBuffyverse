@@ -615,6 +615,7 @@ body {
 }
 
 .navbar {
+    width: 100%;
     position: fixed;
     margin-top: -9px;
     z-index: 2;
@@ -657,7 +658,18 @@ body {
     color: #DF644A;  
 }
 
+.navbuttons {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 #menu:hover {
+    cursor: pointer;
+}
+
+#navmenu:hover {
     cursor: pointer;
 }
 

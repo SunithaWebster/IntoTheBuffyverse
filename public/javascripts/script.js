@@ -70,6 +70,107 @@ function scrollDown() {
     });
 };
 
+function scrollForwardSeason(){
+    if (scrollY > 39900) {
+        window.scrollTo({
+            top: 39900,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 33300) {
+        window.scrollTo({
+            top: 33300,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 26700) {
+        window.scrollTo({
+            top: 26700,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 20100) {
+        window.scrollTo({
+            top: 20100,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 13500) {
+        window.scrollTo({
+            top: 13500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY > 6600) {
+        window.scrollTo({
+            top: 6600,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY <= 6600) {
+        window.scrollTo({
+            top: 300,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+};
+
+function scrollBackSeason(){
+    if (scrollY < 6600) {
+        window.scrollTo({
+            top: 6600,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 13500) {
+        window.scrollTo({
+            top: 13500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 20100) {
+        window.scrollTo({
+            top: 20100,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 26700) {
+        window.scrollTo({
+            top: 26700,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 33300) {
+        window.scrollTo({
+            top: 33300,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 39900) {
+        window.scrollTo({
+            top: 39900,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else if (scrollY < 43500) {
+        window.scrollTo({
+            top: 43500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+};
+
+function pageScrollBy() {
+    window.scrollBy(0,-1);
+    scrolldelay = setTimeout(pageScrollBy, 10)
+};
+
+function stopScrollBy() {
+    clearTimeout(scrolldelay)
+};
+
 function arrowKeyScroll(event) {
     if (event.code === 'ArrowRight') {
         scrollDown();
