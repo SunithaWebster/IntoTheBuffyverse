@@ -46,7 +46,7 @@
             });
         };
         function transform() {
-            const div = document.getElementById("element3");
+            const div = document.getElementById("element2");
             const divs = document.getElementById("container").children;
             // div.translate(50,50);
             // div.style.display = "none";
@@ -55,6 +55,7 @@
                     divs[i].style.display = "none";
                 }
             }
+            div.style.left = 100;
         };
         setTimeout(transform, 1000);
     </script>

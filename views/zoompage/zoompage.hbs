@@ -27,7 +27,7 @@
     </audio> --}}
     <div id="container" class="container">
     <div class="navbar">
-        <div class="logo">
+        <div style="display: block;" class="logo" onclick="toggleDisplay('navbuttons');">
             <p>&ensp;Into the Buffyverse</p>
             <p id="test" style="margin-left: 300px; color: white;"></p>
         </div>
@@ -44,13 +44,16 @@
             <a href="https://buffy.fandom.com/wiki/Buffy_the_Vampire_Slayer_and_Angel" target="_blank"><p>Buffy Fandom</p></a>
             <a href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer" target="_blank"><p>Buffy Wikipedia</p></a>
         </div>
-        <div style="display: flex; flex-direction: column;">
+        <img id="navmenu" style="height: 30px; position: fixed; left: 0; top: 0; margin-top: 32px; margin-left: 270px; z-index: 12; border: 5px solid #555;" src="images/dropdownarrow.png" onclick="toggleDisplay('navbuttons');">
+        <div id="navbuttons" class="navbuttons">
             <button onclick="scrollToBack()">Scroll to Beginning</button>
+            <button onclick="scrollToFront()">Scroll to End</button>
             <button onclick="scrollUp()">Scroll Backwards (&lt;)</button>
             <button onclick="scrollDown()">Scroll Forwards (&gt;)</button>
-            <button onclick="scrollToFront()">Scroll to End</button>
-            <button onclick="">Backwards a Season</button>
-            <button onclick="">Forwards a Season</button>
+            <button onclick="scrollBackSeason()">Backwards a Season</button>
+            <button onclick="scrollForwardSeason()">Forwards a Season</button>
+            <button onclick="pageScrollBy()">Start Auto Scroll</button>
+            <button onclick="stopScrollBy()">Stop Auto Scroll</button>
         </div>
     </div>
     <h1>
@@ -96,9 +99,12 @@
             //testCard2.style.transform = translate(0, 100);
             testCard2.style.transform = translate3d(80, 20, 20);
         };
+       
         // setTimeout(hideCard, 400);
         // setTimeout(testShiftCards, 400);
         setTimeout(shiftCard, 800);
+        setTimeout(scrollToBack, 800);
+        // document.addEventListener("DOMMouseScroll", stopScrollBy);
         //document.body.addEventListener("scroll", scrollToNextCard());
     </script>
 </body>
