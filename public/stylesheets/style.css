@@ -510,14 +510,15 @@
 }
 
 html {
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 
 html::-webkit-scrollbar {
   display: none;
+  overscroll-behavior: none;
 }
 
 body {
@@ -687,13 +688,13 @@ h1 .logo {
 .scene3D > div .card_right__rating__stars .rating > input:checked ~ label,
 .scene3D > div .card_right__rating__stars .rating:not(:checked) > label:hover,
 .scene3D > div .card_right__rating__stars .rating:not(:checked) > label:hover ~ label {
-  color: #FFD700;
+  color: #ffd700;
 }
 .scene3D > div .card_right__rating__stars .rating > input:checked + label:hover,
 .scene3D > div .card_right__rating__stars .rating > input:checked ~ label:hover,
 .scene3D > div .card_right__rating__stars .rating > label:hover ~ input:checked ~ label,
 .scene3D > div .card_right__rating__stars .rating > input:checked ~ label:hover ~ label {
-  color: #FFED85;
+  color: #ffed85;
 }
 .scene3D > div .card_right__review p {
   color: white;
@@ -752,9 +753,6 @@ h1 .logo {
   margin: auto;
   top: 0;
   bottom: 0;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
 }
 .scene3D > div .card_inverted_right {
@@ -841,13 +839,13 @@ h1 .logo {
 .scene3D > div .card_inverted_left__rating__stars .rating > input:checked ~ label,
 .scene3D > div .card_inverted_left__rating__stars .rating:not(:checked) > label:hover,
 .scene3D > div .card_inverted_left__rating__stars .rating:not(:checked) > label:hover ~ label {
-  color: #FFD700;
+  color: #ffd700;
 }
 .scene3D > div .card_inverted_left__rating__stars .rating > input:checked + label:hover,
 .scene3D > div .card_inverted_left__rating__stars .rating > input:checked ~ label:hover,
 .scene3D > div .card_inverted_left__rating__stars .rating > label:hover ~ input:checked ~ label,
 .scene3D > div .card_inverted_left__rating__stars .rating > input:checked ~ label:hover ~ label {
-  color: #FFED85;
+  color: #ffed85;
 }
 .scene3D > div .card_inverted_left__review p {
   color: white;
@@ -897,9 +895,8 @@ h1 .logo {
   transition-duration: 0.5s;
 }
 
-html {
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
+.container {
+  height: 100vh;
 }
 
 .container {
@@ -949,14 +946,11 @@ html {
   color: #DF644A;
 }
 
-.navbuttons {
-  padding-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+#menu:hover {
+  cursor: pointer;
 }
 
-#menu:hover {
+#navmenu:hover {
   cursor: pointer;
 }
 
@@ -967,6 +961,10 @@ html {
 #search {
   background: url("images/searchicon.png") no-repeat left;
   color: #ffffff;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 a:link {

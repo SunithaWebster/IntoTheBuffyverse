@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('dotenv').config()
+
 /**
  * Module dependencies.
  */
@@ -13,18 +15,30 @@ var mongoose = require("mongoose");
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || "3000");
+var port = normalizePort(process.env.PORT || process.env.PORT_TEST);
 app.set("port", port);
 
 /**
  * Connect to MongoDB
  **/
 
-var mongoDbUrl = process.env.MONGODB_URL || "mongodb+srv://SWebScooby:OIbzpV5mDc3au8Sf@buffyverse.go2fcrs.mongodb.net/into_the_buffyverse";
+if(process.env.NODE_ENV === 'test') {
+  var mongoDbUrl = process.env.TESTDB_URL;
+} else {
+  // eslint-disable-next-line no-redeclare
+  var mongoDbUrl = process.env.MAINDB_URI;
+}
 mongoose.connect(mongoDbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+
+// var mongoDbUrl = process.env.MONGO_URI || MONGODB_URL;
+// mongoose.connect(mongoDbUrl, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));

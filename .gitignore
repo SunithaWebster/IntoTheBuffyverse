@@ -1,6 +1,9 @@
 ### Files to ignore when staging:
 **/.DS_Store
+package-lock.json
 cypress/screenshots/
 cypress/videos/
 node_modules/
 coverage/
+.gitignore
+.env
