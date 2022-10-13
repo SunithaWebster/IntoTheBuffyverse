@@ -68,6 +68,7 @@
                     }
                 }
 
+                // Original "randomly spaced" cards layout
                 // @for $i from 0 through 146 {
                 //     &:nth-child(#{$i}) {
                 //         transform: translate3D(random(50) - 25 * 1%,
@@ -658,6 +659,19 @@ h1 {
 
 #menu:hover {
   cursor: pointer;
+}
+
+button {
+    color: #DF644A;
+    background-color: #000000;
+    border-color: #DF644A;
+}
+
+.navbuttons {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
 }
 
 #navmenu:hover {
