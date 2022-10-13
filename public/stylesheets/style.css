@@ -43,7 +43,7 @@
   position: absolute;
   display: block;
   width: 100%;
-  top: 40%;
+  top: 35%;
 }
 @media only screen and (min-width: 600px) {
   .viewport .scene3D-container .scene3D > div {
@@ -957,7 +957,7 @@ button {
 }
 
 .navbuttons {
-  padding-top: 10px;
+  padding-top: 0.95%;
   display: flex;
   justify-content: center;
   gap: 5px;
