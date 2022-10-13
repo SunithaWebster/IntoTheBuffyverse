@@ -44,35 +44,56 @@
         position: absolute;
         display: block;
         width: 100%;
-        top: 40%;
+        top: 35%;
 
         @media only screen and (min-width: 600px) {
           width: 45%;
         }
 
-        &:nth-child(2n) {
-          left: 0;
-        }
+                &:nth-child(2n) {
+                    left: 0;
+                    margin-left: 80px;
+                }
 
-        &:nth-child(2n + 1) {
-          right: 0;
-        }
+                &:nth-child(2n + 1) {
+                    right: 0;
+                    margin-right: 80px;
+                }
 
-        @for $i from 0 through 25 {
-          &:nth-child(#{$i}) {
-            transform: translate3D(random(50) - 25 * 1%,
-              random(100) - 50 * 1%,
-              calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
-          }
+                @for $i from 0 through 146 {
+                    &:nth-child(#{$i}) {
+                        transform: translate3D(0,
+                            0,
+                            calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
+                    }
+                }
+
+                // Original "randomly spaced" cards layout
+                // @for $i from 0 through 146 {
+                //     &:nth-child(#{$i}) {
+                //         transform: translate3D(random(50) - 25 * 1%,
+                //             random(100) - 50 * 1%,
+                //             calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
+                //     }
+                // }
+            }
         }
-      }
     }
-  }
 }
 
+// .scene3D {
+//     // height: 100vh;
+//     overflow-y: scroll;
+//     scroll-snap-type: y mandatory;
+// }
+// .scene3D > div {
+//     // height: 100%;
+//     scroll-snap-align: start;
+// }
+
 /* ----------
-        // Styling
-        // ---------- */
+    // Styling
+    // ---------- */
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:900");
 
 *,
@@ -580,50 +601,96 @@ h1 {
   }
 }
 
+.container {
+    // position: fixed;
+    // top: 0;
+    height: 100vh;
+}
+
+.container {
+    // position: fixed;
+    // top: 0;
+    height: 100vh;
+}
+
 .navbar {
-  position: fixed;
-  margin-top: -9px;
-  z-index: 2;
+    width: 100%;
+    position: fixed;
+    margin-top: -9px;
+    z-index: 2;
 }
 
 .navbar h3 {
-  position: fixed;
-  top: 0;
-  margin-top: 30px;
-  margin-left: 47px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Inspiration", cursive;
-  font-size: 30px;
-  color: #df644a;
-  white-space: nowrap;
+    position: fixed;
+    top: 0;
+    margin-top: 30px;
+    margin-left: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Inspiration", cursive;
+    font-size: 30px;
+    color: #DF644A;
+    white-space: nowrap;
+    // background-color: #00000046;
+    text-shadow: #00000046 2px 2px;
 }
 
 .logo p {
-  font-family: "Lobster", cursive;
-  color: #df644a;
-  font-size: 32.5px;
+    font-family: 'Lobster', cursive;
+    color: #DF644A;
+    font-size: 32.5px;
+    text-shadow: 2px 2px #ff0000;
 }
 
 .dropdown {
-  position: fixed;
-  margin-top: 70px;
-  top: 0;
-  right: 0;
-  margin-right: 15px;
-  z-index: 1;
+    position: fixed;
+    margin-top: 70px;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    z-index: 1;
+    background-color: #00000046;
 }
 
 .dropdown p {
-  font-family: "Merriweather", serif;
-  color: #df644a;
+    font-family: "Merriweather", serif;
+    color: #DF644A;  
 }
 
 #menu:hover {
   cursor: pointer;
 }
 
+button {
+    color: #DF644A;
+    background-color: #000000;
+    border-color: #DF644A;
+}
+
+.navbuttons {
+    padding-top: 0.95%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#navmenu:hover {
+cursor: pointer;
+}
+
+#navmenu:hover {
+    cursor: pointer;
+}
+
 #search {
   background: url("images/searchicon.png") no-repeat left;
   color: #ffffff;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
 }
