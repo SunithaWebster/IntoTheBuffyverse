@@ -1,54 +1,83 @@
-<!DOCTYPE html>
-<html>
 <head>
   <link rel="stylesheet" href="stylesheets/style.css" />
   <link rel="stylesheet" href="stylesheets/cardstyle.css" />
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script src="javascripts/script.js"></script>
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+    ></script>
 </head>
 
-<body>
-  {{! <embed id="music" src="/sounds/It-Doesnt-Matter.mp3" loop="true" autostart="true" volume="2" width="2" height="0"> }}
-  {{! <audio autoplay id="music">
-        <source src="/sounds/It-Doesnt-Matter.mp3">
-    </audio> }}
-  <div class="navbar">
-    <div class="logo">
-      <p>&ensp;Into the Buffyverse</p>
+  <body>
+    <div id="container" class="container">
+      <div class="navbar">
+        <div
+          style="display: block;"
+          class="logo"
+          onclick="toggleDisplay('navbuttons');"
+        >
+          <p>&ensp;Into the Buffyverse</p>
+        </div>
+        <h3 id="title"></h3>
+        <img
+          id="menu"
+          style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;"
+          src="images/menuicon2.png"
+          onclick="toggleDisplay('dropdown');"
+        />
+        <div id="dropdown" class="dropdown">
+          <p><a href="/">Home</a></p>
+          <p><a href="/about">About</a></p>
+          <p><a href="/character">Characters</a></p>
+          <p><a href="/roadmap">Roadmap</a></p>
+          <p><a
+              href="https://buffy.fandom.com/wiki/Buffy_the_Vampire_Slayer_and_Angel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Buffy Fandom</a></p>
+          <p><a
+              href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Buffy Wikipedia</a></p>
+          <img
+            id="navmenu"
+            style="height: 30px; position: fixed; left: 0; top: 0; margin-top: 32px; margin-left: 270px; z-index: 12; border: 5px solid #555;"
+            src="images/dropdownarrow.png"
+            onclick="toggleDisplay('navbuttons');"
+          />
+          <div id="navbuttons" class="navbuttons">
+            <button onmousedown="scrollToBack()">Scroll to Beginning (-)</button>
+            <button onmousedown="scrollToFront()">Scroll to End (=)</button>
+            <button onmousedown="scrollUp()">Scroll Backwards (&lt;-)</button>
+            <button onmousedown="scrollDown()">Scroll Forwards (-&gt;)</button>
+            <button onmousedown="scrollBackSeason()">Backwards a Season ([)</button>
+            <button onmousedown="scrollForwardSeason()">Forwards a Season (])</button>
+            <button onclick="pageScrollBy()">Start Auto Scroll (,)</button>
+            <button onclick="stopScrollBy()">Stop Auto Scroll (.)</button>
+          </div>
+        </div>
+      </div>
+      <h1>
+        <img
+          class="logo"
+          src="https://seeklogo.com/images/B/Buffy_the_Vampire_Slayer-logo-1E820809C0-seeklogo.com.png"
+          alt="Buffy the Vampire Slayer Logo"
+        />
+      </h1>
+      <div class="viewport">
+        <div class="scene3D-container">
+          <div id="scene3D" class="scene3D"></div>
+        </div>
+      </div>
     </div>
-    <h3>Episode View: S1, E1: Welcome to the Hellmouth</h3>
-    <img
-      id="menu"
-      style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;"
-      src="images/menuicon2.png"
-      onclick="toggleDisplay('dropdown');"
-    />
-    <div id="dropdown" class="dropdown">
-      <input id="search" type="text" />
-      <p>About</p>
-      <p>Episodes</p>
-      <p>Characters</p>
-      <p>Community</p>
-      <p>Report</p>
-      <p>FAQ</p>
-      <p>Buffy Fandom</p>
-      <p>Buffy Wikipedia</p>
-    </div>
-  </div>
-  <h1>
-    <img
-      class="logo"
-      src="https://seeklogo.com/images/B/Buffy_the_Vampire_Slayer-logo-1E820809C0-seeklogo.com.png"
-      alt="Buffy the Vampire Slayer Logo"
-    />
-    {{! Buffy the Vampire Slayer }}
-  </h1>
-  <div class="viewport">
-    <div class="scene3D-container">
-      <div class="scene3D"></div>
-    </div>
-  </div>
-  <script>document.getElementById("menu").click()</script>
-</body>
+    <script>
+      document.getElementById("menu").click();
+      document.getElementById("navmenu").click(); window.onkeydown =
+      keyShortcut; window.onscroll = () => { updateCardTitleBar();
+      cullDistantCards(); }; setTimeout(shiftCard, 800);
+      setTimeout(scrollToBack, 800);
+    </script>
+  </body>
 </html>

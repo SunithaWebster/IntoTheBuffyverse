@@ -65,6 +65,11 @@ describe("Home page", () => {
         );
     };
 
+  it("checks for card elements on either end"),
+    () => {
+      cy.scrollTo(0, 3600).get('div[id="300"]').should("be.visible");
+    };
+
   // it('can navigate the menu items', () => {
   //   cy.get('[data-cy="dropdown-link-about"]').click();
   //   cy.location('pathname').should('match', /\/about$/);

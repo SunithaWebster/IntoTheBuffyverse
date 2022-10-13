@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather");
 @import url("https://fonts.googleapis.com/css2?family=Inspiration");
+@import url("https://fonts.googleapis.com/css2?family=Estonia&family=IM+Fell+English:ital@1&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
@@ -27,7 +28,8 @@
     width: 100%;
     height: 100%;
     perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
-    perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%) calc(var(--scenePerspectiveOriginY) * 1%);
+    perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%)
+      calc(var(--scenePerspectiveOriginY) * 1%);
     will-change: perspective-origin;
     transform: translate3d(0, 0, 0); //Allow Hardware-Accelerated CSS
 
@@ -40,11 +42,11 @@
       transform: translateZ(calc(var(--cameraZ) * 1px));
       will-change: transform;
 
-      >div {
+      > div {
         position: absolute;
         display: block;
         width: 100%;
-        top: 40%;
+        top: 35%;
 
         @media only screen and (min-width: 600px) {
           // width: 45%;
@@ -53,27 +55,50 @@
 
         &:nth-child(2n) {
           left: 0;
+          margin-left: 80px;
         }
 
         &:nth-child(2n + 1) {
           right: 0;
+          margin-right: 80px;
         }
 
-        @for $i from 0 through 25 {
+        @for $i from 0 through 146 {
           &:nth-child(#{$i}) {
-            transform: translate3D(random(50) - 25 * 1%,
-              random(100) - 50 * 1%,
-              calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
+            transform: translate3D(
+              0,
+              0,
+              calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
+            );
           }
         }
+
+        // Original "randomly spaced" cards layout
+        // @for $i from 0 through 146 {
+        //     &:nth-child(#{$i}) {
+        //         transform: translate3D(random(50) - 25 * 1%,
+        //             random(100) - 50 * 1%,
+        //             calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px));
+        //     }
+        // }
       }
     }
   }
 }
 
+// .scene3D {
+//     // height: 100vh;
+//     overflow-y: scroll;
+//     scroll-snap-type: y mandatory;
+// }
+// .scene3D > div {
+//     // height: 100%;
+//     scroll-snap-align: start;
+// }
+
 /* ----------
-        // Styling
-        // ---------- */
+    // Styling
+    // ---------- */
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:900");
 
 *,
@@ -95,10 +120,12 @@ html::-webkit-scrollbar {
 
 body {
   background: rgb(2, 0, 36);
-  background: linear-gradient(0deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(50, 50, 93, 1) 35%,
-      rgba(38, 34, 34, 1) 100%); // background-color: hsl(231, 15%, 18%);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(50, 50, 93, 1) 35%,
+    rgba(38, 34, 34, 1) 100%
+  ); // background-color: hsl(231, 15%, 18%);
   color: hsl(231, 15%, 18%);
   padding: 0;
   margin: 0;
@@ -152,7 +179,44 @@ h1 {
 }
 
 .scene3D {
-  >div {
+  > div {
+    // padding-top: 0;
+
+    // h2.eventtitle {
+    //     margin: 0;
+    //     padding: 1rem;
+    //     font-family: "Playfair Display SC", serif;
+    //     font-size: 3.5rem;
+    //     text-align: center;
+    //     // background-color: rgb(131, 14, 14);
+    //     color: white;
+    //     font-family: 'Babylonica', cursive;
+    //     font-weight: bolder;
+    //     // font-family: 'Ruthie', cursive;
+    //     background: rgb(98, 0, 0);
+    //     background: linear-gradient(0deg, rgba(98, 0, 0, 1) 0%, rgba(101, 9, 9, 1) 50%, rgba(37, 0, 0, 1) 100%);
+    // }
+
+    // @for $i from 0 through 25 {
+    //     &:nth-child(#{$i}) {
+    //         // background-color: hsl(-30 + ($i * 30), 100%, 88%);
+    //         background-color: rgb(32, 0, 0);
+    //         color: white;
+    //         margin: 0;
+    //     }
+    // }
+
+    // div {
+    //     padding: 2rem;
+    // }
+
+    // p {
+    //     margin: 0;
+    // }
+
+    // a {
+    //     text-decoration: none;
+    // }
 
     .card {
       width: 800px;
@@ -246,11 +310,11 @@ h1 {
               border: none;
             }
 
-            .rating>input {
+            .rating > input {
               display: none;
             }
 
-            .rating>label:before {
+            .rating > label:before {
               margin: 5px;
               font-size: 1.25em;
               display: inline-block;
@@ -258,12 +322,12 @@ h1 {
               font-family: FontAwesome;
             }
 
-            .rating>.half:before {
+            .rating > .half:before {
               content: "\f089";
               position: absolute;
             }
 
-            .rating>label {
+            .rating > label {
               color: #ddd;
               float: right;
             }
@@ -437,11 +501,11 @@ h1 {
               border: none;
             }
 
-            .rating>input {
+            .rating > input {
               display: none;
             }
 
-            .rating>label:before {
+            .rating > label:before {
               margin: 5px;
               font-size: 1.25em;
               display: inline-block;
@@ -449,12 +513,12 @@ h1 {
               font-family: FontAwesome;
             }
 
-            .rating>.half:before {
+            .rating > .half:before {
               content: "\f089";
               position: absolute;
             }
 
-            .rating>label {
+            .rating > label {
               color: #ddd;
               float: right;
             }
@@ -544,7 +608,20 @@ h1 {
   }
 }
 
+.container {
+  // position: fixed;
+  // top: 0;
+  height: 100vh;
+}
+
+.container {
+  // position: fixed;
+  // top: 0;
+  height: 100vh;
+}
+
 .navbar {
+  width: 100%;
   position: fixed;
   margin-top: -9px;
   z-index: 2;
@@ -557,16 +634,18 @@ h1 {
   margin-left: 47px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Inspiration", cursive;
-  font-size: 30px;
+  font-family: "Estonia", cursive;
+  font-size: 70px;
   color: #df644a;
   white-space: nowrap;
+  text-shadow: #00000046 2px 2px;
 }
 
 .logo p {
   font-family: "Lobster", cursive;
   color: #df644a;
   font-size: 32.5px;
+  text-shadow: 2px 2px #ff0000;
 }
 
 .dropdown {
@@ -576,18 +655,82 @@ h1 {
   right: 0;
   margin-right: 15px;
   z-index: 1;
+  background-color: #00000046;
 }
 
 .dropdown p {
-  font-family: "Merriweather", serif;
+  font-family: "Lobster", cursive;
+  font-size: 23px;
   color: #df644a;
+}
+
+.dropdown a {
+  font-family: "Lobster", cursive;
+  font-size: 23px;
+  color: #df644a;
+}
+
+.roadmap {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  color: #df644a;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.character {
+  font-family: "Lobster", cursive;
+  font-size: 25px;
+  color: #df644a;
+  margin-top: 25px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buffy {
+  margin-left: 15px;
 }
 
 #menu:hover {
   cursor: pointer;
 }
 
+button {
+  color: #df644a;
+  background-color: #000000;
+  border-color: #df644a;
+}
+
+.navbuttons {
+  padding-top: 0.95%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+#navmenu:hover {
+  cursor: pointer;
+}
+
+#navmenu:hover {
+  cursor: pointer;
+}
+
 #search {
   background: url("images/searchicon.png") no-repeat left;
   color: #ffffff;
+}
+
+a:link {
+  color: #df644a;
+}
+
+a:visited {
+  color: #863c2c;
 }
