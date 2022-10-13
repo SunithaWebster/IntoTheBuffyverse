@@ -14,7 +14,16 @@ function updateCardTitleBar() {
     var cardId = Math.round(scrollY / 300);
     var episode = episodes[cardId - 1];
     var title = document.getElementById("title");
+    var bgPreview = document.getElementById("bg-preview");
     title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title}: ${episode.air_date.substring(0,10)}`;
+    bgPreview.src=`${episode.imgurl}`;
+    if (document.getElementById(`${cardId}`).classList.contains("card")) {
+        bgPreview.style.left = "50%";
+        bgPreview.style.right = "0";
+    } else {
+        bgPreview.style.left = "0";
+        bgPreview.style.right = "50%";
+    }
 };
 
 function scrollToFront() {
