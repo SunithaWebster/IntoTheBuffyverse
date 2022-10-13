@@ -111,6 +111,7 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overscroll-behavior: none;
+  width: 100%;
 }
 
 html::-webkit-scrollbar {
@@ -714,6 +715,52 @@ button {
   display: flex;
   justify-content: center;
   gap: 5px;
+}
+
+// audio {
+//   filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+//   width: 200px;
+//   height: 25px;
+//   bottom: 5px;;
+//   right: 50px;
+// }
+
+.audio-container {
+  width: 100%;
+  position: absolute;
+  float: right;
+}
+
+// .audio-player {
+//   float: right;
+// }
+
+footer {
+  width: 100%;
+  position: absolute;
+
+}
+
+.about {
+  color: #df644a;
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  margin-left: 100px;
+  padding-top: 150px;
+  width: 1000px; 
+  padding: 50px;
+  margin-top: 20px;
+}
+
+.kitten-logo{
+  float: right;
+  margin-right: 380px;
+  margin-top: -100px;
 }
 
 #navmenu:hover {

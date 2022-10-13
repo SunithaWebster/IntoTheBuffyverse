@@ -1,59 +1,93 @@
-<div class="about">
-  <h1 class="about"> About Team Kitten Poker</h1>
-  <br />
-  <img
-    src="images/Kitten_Poker.svg"
-    width="200px"
-    height="200px"
-    alt="Playing cards - the four aces, foregrounded by a ready-to-pounce kitten on a circular black background, strapline, 'Kitten Poker'"
-  />
-  <p>
-    <h1>Planning:</h1>
-    - used a Miro board to build diagram -
-    <h3><a href="https://miro.com/app/board/uXjVPRTgeFM=/">Link to the Project
-        Diagram</a></h3>
-    - adapted the existing project Trello board -
-    <h3><a href="https://trello.com/b/i8kn5ccu/to-do">Link to the Project Trello
-        Board</a></h3>
-    - created a project git repository -
-    <h3><a href="https://github.com/SunithaWebster/IntoTheBuffyverse">Link to
-        the Project GitHub Repository</a></h3>
-    - took time to get familiar with the legacy codebase MongoDB, Cypress,
-    Express MVC controllers, routes, etc.
-    <br />
-    <h1>Test coverage, quality, and deployment pipeline:</h1>
-    - Followed TDD process, writing tests prior to implementation:
-    <br />
-    - ensured that any changes to the schemas didn't break the jest tests
-    <br />
-    - 100% jest code coverage, but recognised that this wasn't testing front-end
-    functionality
-    <br />
-    - therefore wrote extensive cypress tests
-    <br />
-    - git workflow, working on branches, creating pull requests (instituted peer
-    PR approval before merge rule)
-    <br />
-    - ensured all tests were passing for everyone in the team before moving on
-    <br />
-    - 138 commits
-    <br />
-    <h1>Documenting learning:</h1>
-    - trello board
-    <br />
-    - git history
-    <br />
-    - discussion with team - Friday retro and catch ups
-    <br />
-    - notes from lots of research on the existing codebase and unfamiliar
-    frameworks, etc.
-    <br />
-    <h1>Team challenges and successes</h1>
-    - Got beyond MVP working app, with all cypress and jest tests passing
-    <br />
-    - Got better at debugging
-    <br />
-    - Have learned that front-end code coverage needs to planned for and set up
-    at the outset
-  </p>
-</div>
+<head>
+  <link rel="stylesheet" href="stylesheets/style.scss" />
+  <script src="javascripts/script.js"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <p>&ensp;Into the Buffyverse</p>
+    </div>
+    <h3>
+      About Team Kitten Poker      
+    </h3>
+    <img
+        class="kitten-logo"
+        src="images/KittenPoker2.svg"
+        width="200px"
+        height="206px"
+        alt="Team Kitten Poker logo"
+      />
+    <img
+      id="menu"
+      style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;"
+      src="images/menuicon2.png"
+      onclick="toggleDisplay('dropdown');"
+    />
+    <div id="dropdown" class="dropdown">
+      <p><a href="/">Home</a></p>
+      <p><a href="/about">About</a></p>
+      <p><a href="/character">Characters</a></p>
+      <p><a href="/roadmap">Roadmap</a></p>
+      <p><a
+          href="https://buffy.fandom.com/wiki/Buffy_the_Vampire_Slayer_and_Angel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Buffy Fandom</a></p>
+      <p><a
+          href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Buffy Wikipedia</a></p>
+    </div>
+  </div>
+  <h1>
+    <img
+      class="logo"
+      src="https://seeklogo.com/images/B/Buffy_the_Vampire_Slayer-logo-1E820809C0-seeklogo.com.png"
+      alt="Buffy the Vampire Slayer Logo"
+    />
+  </h1>
+  <div class="about">
+    <h2> Planning:</h2>
+    <p>Used a Miro board to build diagram</p>
+    <h3>
+      <a href="https://miro.com/app/board/uXjVPRTgeFM=/">Link to the Project
+        Diagram</a>
+    </h3>
+    <p>Adapted the existing project Trello board</p>
+    <h3>
+      <a href="https://trello.com/b/i8kn5ccu/to-do">Link to the Project Trello
+        Board</a>
+    </h3>
+    <p>Created a project git repository</p>
+    <h3>
+      <a href="https://github.com/SunithaWebster/IntoTheBuffyverse">Link to the
+        Project GitHub Repository</a>
+    </h3>
+    <h2>Test coverage, quality, and deployment pipeline:</h2>
+    <ul>
+      <li>Followed TDD process, writing tests prior to implementation</li>
+      <li>Ensured that any changes to the schemas didn't break the jest tests</li>
+      <li>100% jest code coverage, but recognised that this wasn't testing
+        front-end functionality</li>
+      <li>Therefore wrote extensive cypress tests</li>
+      <li>Git workflow, working on branches, creating pull requests (instituted
+        peer PR approval before merge rule)</li>
+      <li>Ensured all tests were passing for everyone in the team before moving
+        on</li>
+    </ul>
+    <h2>Team challenges and successes:</h2>
+    <ul>
+      <li>Got beyond MVP working app, with all cypress and jest tests passing</li>
+      <li>Got better at debugging</li>
+      <li>Have learned that front-end code coverage needs to planned for and set
+        up at the outset</li>
+    </ul>
+  </div>
+    <script>
+      document.getElementById("menu").click();
+      document.getElementById("navmenu").click(); window.onkeydown =
+      keyShortcut;
+    </script>
+</body>
