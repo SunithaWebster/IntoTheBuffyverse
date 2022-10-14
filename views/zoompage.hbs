@@ -1,6 +1,8 @@
 <head>
   <link rel="stylesheet" href="stylesheets/style.css" />
   <link rel="stylesheet" href="stylesheets/cardstyle.css" />
+  <link rel="stylesheet" href="stylesheets/mainstyle.css" />
+  <link rel="stylesheet" href="stylesheets/navcss.css" />
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script src="javascripts/script.js"></script>
@@ -10,69 +12,72 @@
 </head>
 
   <body>
-    <div id="container" class="container">
+
+
+<div id="container" class="container">
+      
+    <div class="container" id="container">
       <div class="navbar">
-        <div
-          style="display: block;"
-          class="logo"
-          onclick="toggleDisplay('navbuttons');"
-        >
-          <p>&ensp;Into the Buffyverse</p>
-        </div>
-        <h3 id="title" style="margin-top: 15px; margin-left: 45px; font-size: 55px;" ></h3>
-        <img
-          id="menu"
-          style="height: 30px; position: fixed; right: 0; top: 0; margin-top: 22px; z-index: 11;"
-          src="images/menuicon2.png"
-          onclick="toggleDisplay('dropdown');"
-        />
-        <div id="dropdown" class="dropdown">
-          <p><a href="/">Home</a></p>
-          <p><a href="/about">About</a></p>
-          <p><a href="/character">Characters</a></p>
-          <p><a href="/roadmap">Roadmap</a></p>
-          <p><a
-              href="https://buffy.fandom.com/wiki/Buffy_the_Vampire_Slayer_and_Angel"
+
+        <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+        <label for="menu-icon"></label>
+        <nav class="nav">
+          <ul class="pt-5">
+            <li><div class="glitch-wrapper">
+            <div class="glitch" data-text="INTO THE BUFFYVERSE">INTO THE BUFFYVERSE</div>
+          </div></li>
+            <li><br></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/character">Characters</a></li>
+            <li><a href="/roadmap">Roadmap</a></li>
+            <li><br></li>
+            <li><a href="https://buffy.fandom.com/wiki/Buffy_the_Vampire_Slayer_and_Angel"
               target="_blank"
-              rel="noopener noreferrer"
-            >Buffy Fandom</a></p>
-          <p><a
-              href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer"
+              rel="noopener noreferrer">Buffy Fandom</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer"
               target="_blank"
-              rel="noopener noreferrer"
-            >Buffy Wikipedia</a></p>
+              rel="noopener noreferrer">Buffy Wikipedia</a></li>
+          </ul>
+        </nav>
+        
+        <div class="glitch-wrapper" id="maintitle">
+          <div class="glitch" data-text="INTO THE BUFFYVERSE">INTO THE BUFFYVERSE</div>
         </div>
-        <img
-          id="navmenu"
-          style="height: 30px; position: fixed; left: 0; top: 0; margin-top: 32px; margin-left: 270px; z-index: 12; border: 5px solid #555;"
-          src="images/dropdownarrow.png"
-          onclick="toggleDisplay('navbuttons');"
-        />
-        <div id="navbuttons" class="navbuttons">
-          <button onmousedown="scrollToBack()">Scroll to Beginning (-)</button>
-          <button onmousedown="scrollToFront()">Scroll to End (=)</button>
-          <button onmousedown="scrollUp()">Scroll Backwards (&lt;-)</button>
-          <button onmousedown="scrollDown()">Scroll Forwards (-&gt;)</button>
-          <button onmousedown="scrollBackSeason()">Backwards a Season ([)</button>
-          <button onmousedown="scrollForwardSeason()">Forwards a Season (])</button>
-          <button onclick="pageScrollBy()">Start Auto Scroll (,)</button>
-          <button onclick="stopScrollBy()">Stop Auto Scroll (.)</button>
+        <div class="episodestitlecontainer">
+            <h3 id="pretitle"></h3>
+            <h3 id="title"></h3>
         </div>
+        
+        
+
+
       </div>
-      <h1>
         <img
           class="logo"
           src="https://seeklogo.com/images/B/Buffy_the_Vampire_Slayer-logo-1E820809C0-seeklogo.com.png"
           alt="Buffy the Vampire Slayer Logo"
         />
-      </h1>
       <div class="viewport">
         <div class="scene3D-container">
           <div id="scene3D" class="scene3D"></div>
         </div>
       </div>
     </div>
-    <footer>
+    <footer id="footer">
+      <div id="navbuttons" class="navbuttons">
+          <button class="raise" onmousedown="scrollUp()">Scroll Backwards (&lt;-)</button>
+          <button class="raise" onmousedown="scrollDown()">Scroll Forwards (-&gt;)</button>
+          <button class="raise" onmousedown="scrollToBack()">Scroll to Beginning (-)</button>
+          <button class="raise" onmousedown="scrollToFront()">Scroll to End (=)</button>
+          <button class="raise" onmousedown="scrollBackSeason()">Backwards a Season ([)</button>
+          <button class="raise" onmousedown="scrollForwardSeason()">Forwards a Season (])</button>
+          <button class="raise" id="autoscroll" onclick="pageScrollBy()">Start Auto Scroll (,)</button>
+          <button class="raise" onclick="stopScrollBy()">Stop Auto Scroll (.)</button>
+      </div>
+      <div id="stringbottom">
+        <p>This is an educational project for the MAKERS Software Development bootcamp by the Kitten Poker Team (July 2022)</p>
+      </div>
       {{!-- <div class="audio-container">
         <audio controls autoplay class="audio-player">
           <source src="/sounds/Buffy_The_Vampire_Slayer_1.mp3" type="audio/mpeg" />
@@ -80,10 +85,11 @@
       </div> --}}
     </footer>
     <script>
-      document.getElementById("menu").click();
-      document.getElementById("navmenu").click(); window.onkeydown =
-      keyShortcut; window.onscroll = () => { updateCardTitleBar();
-      cullDistantCards(); };
+      window.onkeydown = keyShortcut; 
+      window.onscroll = () => { 
+        updateCardTitleBar();
+        cullDistantCards(); 
+        };
       setTimeout(scrollToBack, 800);
     </script>
   </body>
