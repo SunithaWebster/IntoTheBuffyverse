@@ -19,7 +19,8 @@
 /* Set 3D scene */
 
 .viewport {
-  z-index: 100;
+  position:relative;
+  z-index: -1;
   height: calc(var(--viewportHeight) * 1px);
 
   .scene3D-container {
@@ -626,7 +627,7 @@ h1 {
   width: 100%;
   position: fixed;
   margin-top: -9px;
-  z-index: -2;
+  // z-index: -2;
 }
 
 .navbar h3 {
