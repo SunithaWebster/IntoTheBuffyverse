@@ -19,6 +19,7 @@
 /* Set 3D scene */
 
 .viewport {
+  z-index: 100;
   height: calc(var(--viewportHeight) * 1px);
 
   .scene3D-container {
@@ -625,16 +626,16 @@ h1 {
   width: 100%;
   position: fixed;
   margin-top: -9px;
-  z-index: 2;
+  z-index: -2;
 }
 
 .navbar h3 {
-  position: fixed;
-  top: 0;
-  margin-top: 30px;
-  margin-left: 47px;
-  left: 50%;
-  transform: translateX(-50%);
+  // position: fixed;
+  // top: 0;
+  // margin-top: 30px;
+  // margin-left: 47px;
+  // left: 50%;
+  // transform: translateX(-50%);
   font-family: "Estonia", cursive;
   font-size: 70px;
   color: #df644a;
@@ -710,12 +711,7 @@ button {
   border-color: #df644a;
 }
 
-.navbuttons {
-  padding-top: 0.95%;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
+
 
 // audio {
 //   filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
