@@ -236,7 +236,7 @@ function appendEpisodes(episodes) {
         //   episodesNodes.push(createEpisodeItem2(episode, id, css));
         // } else {
           // odd numbered index card creates card_inverted
-          let css = "card_inverted";
+        let css = "card_inverted";
         let id = itemZ;
         episodesNodes.push(createEpisodeItem(episode, id, css));
         // }
@@ -258,9 +258,10 @@ function toggleDisplay(tabId) {
 function updateCardTitleBar() {
     const cardId = Math.round(scrollY / 300);
     const episode = episodes[cardId - 1];
+    const pretitle = document.getElementById("pretitle");
+    pretitle.innerText = `Season: ${episode.season}, Episode: ${episode.episode_number} - Air Date: ${episode.air_date.substring(0, 10)}`;
     const title = document.getElementById("title");
-    title.innerText = `S${episode.season}E${episode.episode_number}: ${episode.title
-        }: ${episode.air_date.substring(0, 10)}`;
+    title.innerText = `${episode.title}`;
 }
 
 function scrollToFront() {

@@ -18,6 +18,8 @@
 
 /* Set 3D scene */
 .viewport {
+  position: relative;
+  z-index: -1;
   height: calc(var(--viewportHeight) * 1px);
 }
 .viewport .scene3D-container {
@@ -515,10 +517,7 @@ html {
   scrollbar-width: none;
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
-<<<<<<< Updated upstream
-=======
   width: 100%;
->>>>>>> Stashed changes
 }
 
 html::-webkit-scrollbar {
@@ -906,16 +905,9 @@ h1 .logo {
   width: 100%;
   position: fixed;
   margin-top: -9px;
-  z-index: 2;
 }
 
 .navbar h3 {
-  position: fixed;
-  top: 0;
-  margin-top: 30px;
-  margin-left: 47px;
-  left: 50%;
-  transform: translateX(-50%);
   font-family: "Estonia", cursive;
   font-size: 70px;
   color: #df644a;
@@ -989,13 +981,6 @@ button {
   color: #df644a;
   background-color: #000000;
   border-color: #df644a;
-}
-
-.navbuttons {
-  padding-top: 0.95%;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
 }
 
 .audio-container {
